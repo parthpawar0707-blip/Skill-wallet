@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Student Mental Health Analytics{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="brand">
+                <span>🧠 Campus Well-Being</span>
+                <span class="brand-badge">Tableau + Flask</span>
+            </a>
+            <nav class="nav-links">
+                <a href="{{ url_for('index') }}" class="nav-link {% if request.path == '/' %}active{% endif %}">Overview</a>
+                <a href="{{ url_for('dashboard') }}" class="nav-link {% if request.path == '/dashboard' %}active{% endif %}">Dashboard</a>
+                <a href="{{ url_for('story') }}" class="nav-link {% if request.path == '/story' %}active{% endif %}">Tableau Story</a>
+                <a href="{{ url_for('data_view') }}" class="nav-link {% if request.path == '/data' %}active{% endif %}">Student Dataset</a>
+                <a href="{{ url_for('insights') }}" class="nav-link {% if request.path == '/insights' %}active{% endif %}">Analytical Insights</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>{{ config.PROJECT_NAME }}</strong> | Domain: {{ config.DOMAIN }}
+            </div>
+            <div>
+                Skill Wallet Project &bull; Student: {{ config.STUDENT_NAME }} &bull; {{ config.ACADEMIC_YEAR }}
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

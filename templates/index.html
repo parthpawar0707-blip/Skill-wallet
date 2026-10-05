@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Overview - {{ config.PROJECT_NAME }}{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Analysing Mental Health in Student Ecosystem</h1>
+    <p>
+        An integrated healthcare and higher-education data analytics project investigating the complex relationships between lifestyle habits, physiological stress indicators (such as Heart Rate Variability), academic outcomes, and mental health risk across university cohorts.
+    </p>
+    <div class="hero-tags">
+        <span class="tag">📊 Primary Tool: Tableau</span>
+        <span class="tag">🐍 Web Framework: Flask</span>
+        <span class="tag">🏥 Domain: Healthcare & Education</span>
+        <span class="tag">👥 Cohort Size: {{ kpis.total_students }} Students</span>
+    </div>
+</section>
+
+<!-- KPI Cards -->
+<section>
+    <h2 class="section-title">Campus Well-Being Baseline KPIs</h2>
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-title">Total Students Monitored</div>
+            <div class="kpi-val">{{ kpis.total_students }}</div>
+            <div class="kpi-sub">5 Academic Departments</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Average Stress Level</div>
+            <div class="kpi-val">{{ kpis.avg_stress }} <span style="font-size: 1rem; color: #64748b;">/ 10</span></div>
+            <div class="kpi-sub">Moderate campus stress baseline</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Average Sleep Duration</div>
+            <div class="kpi-val">{{ kpis.avg_sleep }} <span style="font-size: 1rem; color: #64748b;">hrs</span></div>
+            <div class="kpi-sub">Restorative sleep threshold: 6.0+ hrs</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Average Academic Score</div>
+            <div class="kpi-val">{{ kpis.avg_perf }}%</div>
+            <div class="kpi-sub">Overall grade average</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Mean HRV (Heart Rate Var.)</div>
+            <div class="kpi-val">{{ kpis.avg_hrv }} <span style="font-size: 1rem; color: #64748b;">ms</span></div>
+            <div class="kpi-sub">Autonomic nervous balance metric</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">High Risk Interventions</div>
+            <div class="kpi-val" style="color: var(--danger);">{{ kpis.high_risk }} <span style="font-size: 1rem; color: #64748b;">({{ ((kpis.high_risk / kpis.total_students) * 100)|round(1) }}%)</span></div>
+            <div class="kpi-sub">Immediate counselor outreach needed</div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Navigation Cards -->
+<section>
+    <h2 class="section-title">Project Analytical Modules</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>📊 Interactive Tableau Dashboard</h3>
+            <p>
+                Access the multi-chart responsive dashboard displaying all 8 visualizations, global cross-filters (Gender, Academic Year, Department, Risk Tier), and KPI overview cards.
+            </p>
+            <a href="{{ url_for('dashboard') }}" class="card-btn">Open Dashboard &rarr;</a>
+        </div>
+
+        <div class="card">
+            <h3>📖 Sequenced Tableau Story</h3>
+            <p>
+                Walk through a structured 3-scene analytical journey: Baseline Cohort Landscape, Lifestyle & Autonomic Biomarkers, and Academic Burnout Moderation.
+            </p>
+            <a href="{{ url_for('story') }}" class="card-btn">Explore Story Scenes &rarr;</a>
+        </div>
+
+        <div class="card">
+            <h3>📋 Student Dataset & Validation</h3>
+            <p>
+                Inspect the cleaned 80-record student dataset across all 19 demographic, behavioral, psychological, and physiological attributes.
+            </p>
+            <a href="{{ url_for('data_view') }}" class="card-btn">View Cleaned CSV &rarr;</a>
+        </div>
+
+        <div class="card">
+            <h3>💡 Academic Insights & Interventions</h3>
+            <p>
+                Review key statistical discoveries, behavioral patterns, clinical implications of Heart Rate Variability, and college management action plans.
+            </p>
+            <a href="{{ url_for('insights') }}" class="card-btn">Read Key Insights &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- 8 Core Visualizations Summary Table -->
+<section style="margin-top: 1.5rem;">
+    <h2 class="section-title">The 8 Required Tableau Visualizations</h2>
+    <div class="card">
+        <ul style="padding-left: 1.25rem; line-height: 1.8; color: var(--text-main); font-size: 0.95rem;">
+            <li><strong>Viz 1:</strong> Impact of Study Hours on Academic Performance (Bar chart grouped by study intensity colored by average stress)</li>
+            <li><strong>Viz 2:</strong> Gender and Their Depression Level (Horizontal comparative bar chart evaluating depression severity)</li>
+            <li><strong>Viz 3:</strong> Study Hours vs Academic Performance (Disaggregated scatter plot with linear trendline and risk classification)</li>
+            <li><strong>Viz 4:</strong> Average Stress Level by Gender (Vertical bar chart monitoring subjective stress ratings)</li>
+            <li><strong>Viz 5:</strong> Analyzing Heart Rate Variability (Biometric HRV analysis across mental health risk tiers)</li>
+            <li><strong>Viz 6:</strong> KPI Overview Cards (High-level institutional scoreboard: Headcount, Stress, Sleep, Performance)</li>
+            <li><strong>Viz 7:</strong> Mental Risk Level Distribution (Donut / Pie chart with percentage breakdown)</li>
+            <li><strong>Viz 8:</strong> Academic Performance Breakdown (Student distribution across academic performance tiers)</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

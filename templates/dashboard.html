@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - {{ config.PROJECT_NAME }}{% endblock %}
+
+{% block content %}
+<div class="embed-header">
+    <div>
+        <h1 style="font-size: 1.8rem; color: var(--primary);">Student Mental Health & Academic Well-Being Dashboard</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Integrated Tableau Dashboard with responsive layout, 4 interactive filters, and all 8 project worksheets.
+        </p>
+    </div>
+    <a href="{{ dashboard_url }}" target="_blank" class="card-btn" style="background-color: var(--primary); color: #fff;">
+        Open in Tableau Public &nearr;
+    </a>
+</div>
+
+<div class="notice-box">
+    <strong>Tableau Integration Note:</strong>
+    This page embeds your published dashboard. To connect your own Tableau Public URL, update <code>TABLEAU_DASHBOARD_URL</code> in <code>config.py</code>.
+    Current Embed Source: <code>{{ dashboard_url }}</code>
+</div>
+
+<div class="embed-container">
+    <div class="embed-frame-wrapper">
+        <!-- Tableau Modern Web Component API Embed -->
+        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+        
+        <tableau-viz 
+            id="tableauViz" 
+            src="{{ dashboard_url }}"
+            toolbar="bottom" 
+            hide-tabs
+            style="width: 100%; height: 850px;">
+        </tableau-viz>
+
+        <!-- Fallback iframe for compatibility -->
+        <noscript>
+            <iframe 
+                src="{{ dashboard_url }}?:showVizHome=no&:embed=true" 
+                class="embed-frame"
+                title="Student Mental Health Dashboard">
+            </iframe>
+        </noscript>
+    </div>
+</div>
+
+<div class="card" style="margin-top: 1.5rem;">
+    <h3>Dashboard Composition & Visual Structure</h3>
+    <p style="margin-bottom: 0.75rem;">
+        The embedded dashboard includes the following 4-tier interactive components:
+    </p>
+    <ul style="padding-left: 1.25rem; line-height: 1.8; color: var(--text-muted); font-size: 0.92rem;">
+        <li><strong>Header & Global Filter Controls:</strong> Gender, Academic Year, Department, and Mental Health Risk dropdown filters.</li>
+        <li><strong>KPI Scorecards (Viz 6):</strong> Real-time counts of Total Students (80), Avg Stress (4.95), Avg Sleep (6.60 hrs), and Avg Performance (80.5%).</li>
+        <li><strong>Middle Diagnostic Row:</strong> Viz 3 (Study Hours vs Performance Scatter Plot with Linear Trendline), Viz 4 (Average Stress by Gender), and Viz 7 (Mental Health Risk Donut Distribution).</li>
+        <li><strong>Bottom Investigation Row:</strong> Viz 2 (Depression Level by Gender Cohorts), Viz 5 (Heart Rate Variability by Risk Tier), and Viz 8 (Academic Performance Grade Breakdown).</li>
+    </ul>
+</div>
+{% endblock %}

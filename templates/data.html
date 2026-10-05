@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset - {{ config.PROJECT_NAME }}{% endblock %}
+
+{% block content %}
+<div class="embed-header">
+    <div>
+        <h1 style="font-size: 1.8rem; color: var(--primary);">Cleaned Student Mental Health Dataset</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+            80 verified student observations across 19 attributes. Cleaned, audited, and ready for Tableau ingestion.
+        </p>
+    </div>
+    <span class="brand-badge" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">
+        Format: UTF-8 CSV (80 Rows)
+    </span>
+</div>
+
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                {% for h in headers %}
+                <th>{{ h }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in records %}
+            <tr>
+                {% for h in headers %}
+                <td>
+                    {% if h == 'Mental_Health_Risk' %}
+                        {% if row[h] == 'Low' %}
+                            <span class="badge badge-low">Low</span>
+                        {% elif row[h] == 'Medium' %}
+                            <span class="badge badge-med">Medium</span>
+                        {% else %}
+                            <span class="badge badge-high">High</span>
+                        {% endif %}
+                    {% else %}
+                        {{ row[h] }}
+                    {% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

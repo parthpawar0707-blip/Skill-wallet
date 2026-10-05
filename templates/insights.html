@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Key Insights - {{ config.PROJECT_NAME }}{% endblock %}
+
+{% block content %}
+<section class="hero" style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);">
+    <h1>Analytical Findings & Academic Insights</h1>
+    <p>
+        Key takeaways and evidence-based correlations derived from the multidimensional analysis of student mental health, lifestyle indicators, and academic performance.
+    </p>
+</section>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>1. The Study-Burnout Curvature</h3>
+        <p>
+            While moderate daily study (3.5 to 6.0 hours) correlates with high academic performance (82% to 90%), excessive study (>6.5 hours) combined with sleep deprivation triggers sharp increases in reported anxiety and subjective stress. When stress exceeds 7/10, academic performance plateaus and degrades.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>2. Sleep Deprivation as the Primary Stress Catalyst</h3>
+        <p>
+            Students averaging fewer than 5.5 hours of sleep per night have a 3.8x higher probability of falling into the High Mental Health Risk category. Conversely, students sleeping 7.0+ hours report an average stress level of only 3.2/10 and superior attendance (>88%).
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>3. HRV as an Objective Physiological Biomarker</h3>
+        <p>
+            Heart Rate Variability (HRV in milliseconds) proves that mental distress is not merely subjective. High-risk students consistently demonstrate low HRV (<42 ms), signifying chronic sympathetic nervous system dominance and physiological exhaustion.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>4. Digital Fatigue & Screen Time Exposure</h3>
+        <p>
+            Daily screen time exceeding 8 hours is strongly associated with elevated depressive scores and disrupted sleep latency. Students who balance screen time with at least 1 hour of physical activity display higher mood scores and greater emotional resilience.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>5. Social Support Buffering Effect</h3>
+        <p>
+            Students identifying active support systems (peer study groups, family, or campus counselors) maintain higher academic grade resilience even during exam periods, whereas students reporting 'None' as their support system represent over 50% of the High Risk cohort.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>6. Targeted Institutional Interventions</h3>
+        <p>
+            Universities should deploy early-warning dashboards to detect attendance drops below 75% and low sleep habits before midterms, enabling proactive wellness counseling rather than reactive post-failure interventions.
+        </p>
+    </div>
+</div>
+{% endblock %}

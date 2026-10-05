@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Tableau Story - {{ config.PROJECT_NAME }}{% endblock %}
+
+{% block content %}
+<div class="embed-header">
+    <div>
+        <h1 style="font-size: 1.8rem; color: var(--primary);">Tableau Story: 3 Analytical Scenes</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+            A sequenced presentation guiding administrators from cohort discovery to biological biomarkers and academic interventions.
+        </p>
+    </div>
+    <a href="{{ story_url }}" target="_blank" class="card-btn" style="background-color: var(--primary); color: #fff;">
+        Open Story in Tableau Public &nearr;
+    </a>
+</div>
+
+<div class="notice-box">
+    <strong>Tableau Story Integration Note:</strong>
+    This page embeds your published 3-scene Tableau Story. To connect your live URL after publishing, update <code>TABLEAU_STORY_URL</code> in <code>config.py</code>.
+    Current Embed Source: <code>{{ story_url }}</code>
+</div>
+
+<div class="embed-container">
+    <div class="embed-frame-wrapper">
+        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+        
+        <tableau-viz 
+            id="tableauStoryViz" 
+            src="{{ story_url }}"
+            toolbar="bottom" 
+            style="width: 100%; height: 850px;">
+        </tableau-viz>
+
+        <noscript>
+            <iframe 
+                src="{{ story_url }}?:showVizHome=no&:embed=true" 
+                class="embed-frame"
+                title="Student Mental Health Story">
+            </iframe>
+        </noscript>
+    </div>
+</div>
+
+<div class="card-grid" style="margin-top: 1.5rem;">
+    <div class="card">
+        <h3>🎬 Scene 1: Baseline Mental Health</h3>
+        <p>
+            Presents the executive baseline: 80 students, average stress of 4.95/10, and risk stratification showing 15% High Risk and 48.75% Moderate Risk.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🎬 Scene 2: Lifestyle & Physiological Strain</h3>
+        <p>
+            Connects sleep deficits (<6 hrs) and screen overload with clinical Heart Rate Variability (HRV) telemetry, proving autonomic exhaustion.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🎬 Scene 3: Academic Efficacy & Intervention</h3>
+        <p>
+            Illustrates the academic burnout threshold where excessive study hours fail to boost performance when psychological stress is severe.
+        </p>
+    </div>
+</div>
+{% endblock %}
