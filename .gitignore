@@ -49,3 +49,11 @@ $RECYCLE.BIN/
 *.tfl
 *.tflx
 *.tmp
+
+# Temporary video render build artifacts
+temp_audio/
+temp_clips/
+temp_frames/
+temp_test/
+*.mp3.tmp
+
