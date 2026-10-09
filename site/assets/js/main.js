@@ -5,22 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
-      const isVisible = navLinks.style.display === 'flex';
-      navLinks.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '4.25rem';
-        navLinks.style.left = '0';
-        navLinks.style.right = '0';
-        navLinks.style.background = 'white';
-        navLinks.style.padding = '1.5rem';
-        navLinks.style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1)';
-      }
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile nav when clicking any link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('active');
+        }
+      });
     });
   }
 
-  // Smooth scroll for nav links
+  // Smooth scroll for nav anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -32,9 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth',
             block: 'start'
           });
-          if (window.innerWidth <= 768 && navLinks) {
-            navLinks.style.display = 'none';
-          }
         }
       }
     });
@@ -42,26 +37,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Tableau Iframe Fallback & Reload Logic
   const reloadBtn = document.getElementById('reload-tableau');
-  const tableauFrame = document.querySelector('.tableau-iframe');
+  const tableauFrame = document.getElementById('tableau-frame');
   const tableauFallback = document.getElementById('tableau-fallback');
+  const tableauWrapper = document.getElementById('tableau-wrapper');
+
+  let iframeLoaded = false;
+
+  if (tableauFrame) {
+    tableauFrame.addEventListener('load', () => {
+      iframeLoaded = true;
+      if (tableauFallback && tableauWrapper) {
+        tableauFallback.classList.remove('is-visible');
+        tableauWrapper.classList.remove('has-fallback');
+      }
+    });
+
+    // Fallback trigger if iframe load is blocked or takes too long
+    setTimeout(() => {
+      if (!iframeLoaded && tableauFallback && tableauWrapper) {
+        // If still not loaded after 7 seconds, display the fallback card
+        tableauFallback.classList.add('is-visible');
+        tableauWrapper.classList.add('has-fallback');
+      }
+    }, 7000);
+  }
 
   if (reloadBtn && tableauFrame) {
     reloadBtn.addEventListener('click', () => {
       const currentSrc = tableauFrame.src;
       tableauFrame.src = '';
+      if (tableauFallback && tableauWrapper) {
+        tableauFallback.classList.remove('is-visible');
+        tableauWrapper.classList.remove('has-fallback');
+      }
       setTimeout(() => {
         tableauFrame.src = currentSrc;
-      }, 200);
+      }, 250);
     });
   }
 
-  // Fetch verified summary.json to populate dynamic components if needed
+  // Load summary statistics log
   fetch('assets/data/summary.json')
     .then(res => res.json())
     .then(data => {
-      console.log('Verified Student Mental Health Analytics loaded:', data.dataset_metadata);
+      if (data && data.dataset_metadata) {
+        console.log('Verified Student Mental Health Analytics loaded:', data.dataset_metadata);
+      }
     })
-    .catch(err => {
-      console.log('Static fallback active:', err);
+    .catch(() => {
+      console.log('Local summary data fallback active.');
     });
 });
