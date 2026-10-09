@@ -106,7 +106,7 @@
         <span class="eyebrow">Data Architecture</span>
         <h2 class="section-title">Verified Dataset Architecture</h2>
         <p class="section-desc">
-          Structured cohort records spanning 1,000 undergraduate profiles across 16 multi-dimensional clinical, behavioral, and academic variables.
+          Structured cohort records spanning 200 undergraduate profiles across 18 multi-dimensional clinical, behavioral, and academic variables.
         </p>
       </div>
 
@@ -114,52 +114,56 @@
         <div class="card">
           <h4 class="card-title">&#128101; Demographics & Identifiers</h4>
           <p class="card-text">
-            <strong>Student_ID:</strong> Unique integer identifier (1 to 1,000)<br>
+            <strong>User_ID:</strong> Unique student identifier (STU_0001 to STU_0200)<br>
             <strong>Age:</strong> Chronological age distribution (18 to 25 years)<br>
-            <strong>Gender:</strong> Cohort categorization (Male, Female, Other)
+            <strong>Gender:</strong> Cohort categorization (Female, Male, Other)<br>
+            <strong>Occupation:</strong> Academic status & specialization
           </p>
         </div>
         <div class="card">
-          <h4 class="card-title">&#129504; Emotional Well-Being Scales</h4>
+          <h4 class="card-title">&#129504; Emotional & Clinical Scales</h4>
           <p class="card-text">
-            <strong>Stress_Level:</strong> Standardized self-report scale (1–10)<br>
-            <strong>Anxiety_Level:</strong> Generalized anxiety rating (1–10)<br>
-            <strong>Depression_Level:</strong> Depressive symptom severity (1–10)
+            <strong>Stress_Level:</strong> Categorical risk rating (Low, Medium, High)<br>
+            <strong>Anxiety_Score:</strong> Generalized anxiety index (0–100 scale)<br>
+            <strong>Depression_Score:</strong> Depressive symptom severity (0–100 scale)
           </p>
         </div>
         <div class="card">
           <h4 class="card-title">&#9200; Lifestyle & Daily Habits</h4>
           <p class="card-text">
-            <strong>Sleep_Duration_Hours:</strong> Daily sleep duration (2.8 – 10.4 hrs)<br>
-            <strong>Study_Hours_Per_Day:</strong> Self-study duration (1.0 – 8.0 hrs)<br>
-            <strong>Social_Interaction_Score:</strong> Peer engagement rating (1–9)
+            <strong>Daily_Screen_Time:</strong> Digital device exposure (3.5 – 12.0 hrs)<br>
+            <strong>Sleep_Quality:</strong> Subjective rest rating (Poor, Average, Good)<br>
+            <strong>Physical_Activity:</strong> Activity level (Low, Moderate, High)<br>
+            <strong>Social_Interaction:</strong> Peer connectivity rating (1–10)
           </p>
         </div>
         <div class="card">
-          <h4 class="card-title">&#128218; Academic Telemetry</h4>
+          <h4 class="card-title">&#127973; Therapeutic Interventions</h4>
           <p class="card-text">
-            <strong>Academic_Performance_Index:</strong> Score percentage (50.0 – 100.0%)<br>
-            <strong>Attendance_Rate (%):</strong> Class attendance (60.0 – 100.0%)<br>
-            <strong>LMS_Activity_Score:</strong> Learning portal engagement (10 – 99)
+            <strong>Therapy_Type:</strong> CBT, Counseling, Support Group, Meditation, No Therapy<br>
+            <strong>Intervention_Duration:</strong> Program length in weeks<br>
+            <strong>Progress_Score:</strong> Measured symptom improvement (0–100)
           </p>
         </div>
         <div class="card">
-          <h4 class="card-title">&#10084;&#65039; Biometric Telemetry</h4>
+          <h4 class="card-title">&#128196; Calculated Dimensions</h4>
           <p class="card-text">
-            <strong>Heart_Rate_Variability:</strong> Autonomic cardiac vagal tone in milliseconds (36.6 – 99.2 ms), inversely correlating with sustained sympathetic stress strain.
+            <strong>Active_Therapy:</strong> <code>IF [Therapy Type] != "No Therapy" THEN 1 ELSE 0 END</code><br>
+            <strong>HighStress_PoorSleep:</strong> <code>IF [Stress Level] = "High" AND [Sleep Quality] = "Poor" THEN 1 ELSE 0 END</code>
           </p>
         </div>
         <div class="card">
-          <h4 class="card-title">&#129309; Stratification & Strategy</h4>
+          <h4 class="card-title">&#128100; Support System & History</h4>
           <p class="card-text">
-            <strong>Mental_Health_Risk:</strong> Cohort risk tiers (Low, Medium, High)<br>
-            <strong>Personalized_Intervention:</strong> 8 structured institutional support pathways (e.g. CBT, Time Management).
+            <strong>Mental_Health_History:</strong> Prior personal or familial history (Yes, No)<br>
+            <strong>Support_System_Strength:</strong> Low, Medium, High strength tier<br>
+            <strong>Medication_Usage:</strong> Prescribed pharmaceutical support (Yes, No)
           </p>
         </div>
       </div>
 
       <div class="callout">
-        <strong>Privacy & Integrity Statement:</strong> Verified 1,000 records, 16 fields, 0 missing/null values, and 0 duplicate records. Individual row entries and subjective text journals are kept private and analyzed in aggregate.
+        <strong>Privacy & Integrity Statement:</strong> Verified 200 student records, 18 variables, 0 missing/null values, and 0 duplicate IDs. Individual row entries are kept private and analyzed in aggregate.
         <br><br>
         <a href="https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing" target="_blank" rel="noopener" style="color: var(--accent-teal); font-weight: 600;">
           &#128279; Access Dataset Source (Google Spreadsheet)
@@ -175,50 +179,50 @@
         <span class="eyebrow">Executive Summary</span>
         <h2 class="section-title">Cohort Key Performance Indicators</h2>
         <p class="section-desc">
-          Empirically verified statistical benchmarks computed across the entire 1,000 student dataset.
+          Empirically verified statistical benchmarks computed across the entire 200 student dataset in Tableau.
         </p>
       </div>
 
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-value">1,000</div>
+          <div class="kpi-value">200</div>
           <div class="kpi-label">Total Cohort</div>
-          <div class="kpi-desc">Undergraduate Students</div>
+          <div class="kpi-desc">COUNT([User ID])</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-value">5.45</div>
-          <div class="kpi-label">Avg Stress Score</div>
-          <div class="kpi-desc">Scale 1 – 10</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-value">5.50</div>
-          <div class="kpi-label">Avg Depression</div>
-          <div class="kpi-desc">Scale 1 – 10</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-value">5.36</div>
+          <div class="kpi-value">52.59</div>
           <div class="kpi-label">Avg Anxiety Score</div>
-          <div class="kpi-desc">Scale 1 – 10</div>
+          <div class="kpi-desc">AVG([Anxiety Score]) (0–100)</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-value">6.49 <span>hrs</span></div>
-          <div class="kpi-label">Avg Sleep Duration</div>
-          <div class="kpi-desc">Per 24 Hours</div>
+          <div class="kpi-value">48.09</div>
+          <div class="kpi-label">Avg Depression</div>
+          <div class="kpi-desc">AVG([Depression Score]) (0–100)</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-value">79.96%</div>
-          <div class="kpi-label">Attendance Rate</div>
-          <div class="kpi-desc">Classroom Presence</div>
+          <div class="kpi-value">7.10 <span>hrs</span></div>
+          <div class="kpi-label">Avg Screen Time</div>
+          <div class="kpi-desc">AVG([Daily Screen Time])</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-value">75.12%</div>
-          <div class="kpi-label">Academic Index</div>
-          <div class="kpi-desc">Cumulative Benchmark</div>
+          <div class="kpi-value">53.5%</div>
+          <div class="kpi-label">Medium Stress</div>
+          <div class="kpi-desc">107 out of 200 Students</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-value">69.71 <span>ms</span></div>
-          <div class="kpi-label">Heart Rate Var.</div>
-          <div class="kpi-desc">Autonomic Telemetry</div>
+          <div class="kpi-value">24.5%</div>
+          <div class="kpi-label">High Stress</div>
+          <div class="kpi-desc">49 out of 200 Students</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">40.80</div>
+          <div class="kpi-label">CBT Progress</div>
+          <div class="kpi-desc">Top Ranked Therapy</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">40.0%</div>
+          <div class="kpi-label">Prior History</div>
+          <div class="kpi-desc">80 Students with History</div>
         </div>
       </div>
     </div>
@@ -391,30 +395,30 @@
         <span class="eyebrow">Empirical Insights</span>
         <h2 class="section-title">Verified Analytical Findings</h2>
         <p class="section-desc">
-          Synthesized from statistically defensible observations across the 1,000 student dataset.
+          Synthesized from statistically defensible observations across the 200 student dataset in Tableau.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card">
           <div class="card-icon">&#128164;</div>
-          <h4 class="card-title">Sleep as an Autonomic Protective Buffer</h4>
+          <h4 class="card-title">Sleep Quality as the Primary Resilience Buffer</h4>
           <p class="card-text">
-            Students sleeping &ge; 7.5 hours maintain significantly higher Heart Rate Variability (avg 74 ms) and lower chronic stress (4.8), establishing regular sleep hygiene as the single strongest personal resilience factor.
+            Students achieving Good sleep quality rarely experience acute high stress (only 2 out of 45 students). Conversely, 53% of students with poor sleep suffer severe stress. Restorative sleep is the strongest inverse correlate of distress.
           </p>
         </div>
         <div class="card">
-          <div class="card-icon">&#128202;</div>
-          <h4 class="card-title">The Study Intensity & Cognitive Plateau Curve</h4>
+          <div class="card-icon">&#128241;</div>
+          <h4 class="card-title">The Digital Fatigue Threshold (7.5+ Hours)</h4>
           <p class="card-text">
-            Academic Performance Index rises rapidly from 1 to 4 hours of daily study, but plateaus between 5.5 and 8 hours when accompanied by elevated anxiety, demonstrating fatigue-driven diminishing returns.
+            Daily digital screen time escalates from 6.00 hours in Low stress to 8.12 hours in High stress. Consistently exceeding 7.5 hours strongly co-occurs with acute anxiety spikes and elevated academic strain.
           </p>
         </div>
         <div class="card">
           <div class="card-icon">&#129309;</div>
-          <h4 class="card-title">Social Connectivity & Peer Resilience</h4>
+          <h4 class="card-title">Structured Interventions Deliver Proven Progress</h4>
           <p class="card-text">
-            Peer connectivity scores &ge; 6 strongly correlate with lower depressive symptom severity (avg 4.6 vs 6.1 for isolated students), demonstrating the protective power of campus social integration.
+            Cognitive Behavioral Therapy achieves the highest measurable progress score (40.80), followed by Counseling (34.43) and Support Groups (33.10), proving the tangible value of structured institutional care over unguided coping.
           </p>
         </div>
       </div>
@@ -428,7 +432,7 @@
         <span class="eyebrow">Project Demonstration</span>
         <h2 class="section-title">Narrated Video Walkthrough</h2>
         <p class="section-desc">
-          A comprehensive 05:51 minute presentation in natural Indian English presenting the research context, dataset architecture, Tableau BI dashboard, and strategic recommendations.
+          A comprehensive 06:22 minute presentation in natural Indian English presenting the research context, dataset architecture, Tableau BI dashboard, and strategic recommendations.
         </p>
       </div>
 
@@ -438,16 +442,17 @@
             class="video-player" 
             controls 
             preload="metadata"
-            poster="assets/images/video-poster.png">
+            poster="assets/video/video-poster.jpg"
+            playsinline>
             <source src="assets/video/student-mental-health-demo.mp4" type="video/mp4">
-            <track label="English" kind="subtitles" srclang="en" src="assets/video/video-captions.vtt" default>
+            <track label="English" kind="captions" srclang="en" src="assets/video/video-captions.vtt" default>
             Your browser does not support HTML5 video playback.
           </video>
         </div>
         <div class="video-meta">
           <div>
             <div class="video-title">Student Mental Health Analysis | Portfolio Demonstration</div>
-            <div class="video-subtext">Presenter: Parth Pawar &bull; 05:51 Duration &bull; 720p HD &bull; Captions Included</div>
+            <div class="video-subtext">Presenter: Parth Pawar &bull; 06:22 Duration &bull; 720p HD &bull; Captions Included</div>
           </div>
           <div>
             <a href="assets/video/student-mental-health-demo.mp4" download class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.45rem 0.95rem;">

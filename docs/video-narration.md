@@ -1,39 +1,130 @@
-# Video Narration Script: Student Mental Health Analysis
+# Video Narration Script: Analysing Mental Health in Student Ecosystem
 
-**Project Title:** Analysing Mental Health in Student Ecosystem  
+**Video Title:** Analysing Mental Health in Student Ecosystem | Complete Tableau Project Walkthrough  
 **Presenter:** Parth Pawar  
-**Format:** Screen-Recorded / Visual Walkthrough  
-**Voice Profile:** Clear, Natural Indian English (`en-IN-PrabhatNeural` / `en-IN-NeerjaNeural`)  
-**Target Duration:** 5 to 7 Minutes (Synchronized)  
+**Language & Accent:** Natural Indian English (`en-IN-PrabhatNeural`)  
+**Target Duration:** ~5:30 to 6:00 Minutes  
+**Target Speed:** ~145 Words per minute with natural pauses and cadence  
 
 ---
 
-## Segment Breakdown & Timings
+## Chapter 1: Introduction (00:00 – 00:40)
 
-### Segment 1: Introduction (00:00 – 00:35)
-"Hello everyone, and welcome. My name is Parth Pawar, and today I am excited to present my data analytics project: Analysing Mental Health in the Student Ecosystem. As higher education continues to demand intense academic dedication, understanding student well-being, everyday lifestyle habits, and autonomic biological stress has never been more critical. In this demonstration, I will walk you through the end-to-end analytical workflow, from dataset verification and data quality auditing to interactive Tableau dashboard engineering and key empirical insights."
+Hello everyone! My name is Parth Pawar, and welcome to this complete project walkthrough of my data analytics and business intelligence project titled **"Analysing Mental Health in Student Ecosystem"**.
 
-### Segment 2: Problem Statement (00:35 – 01:20)
-"In contemporary universities, mental health challenges such as chronic stress, anxiety, and depressive symptoms frequently go unnoticed until a student experiences acute academic burnout or severe absenteeism. Academic advisors and counseling centers often lack real-time, unified diagnostic visibility into how sleep disruption, screen time, and study habits directly impact student wellness. The core objective of this project is to build an interactive, data-driven business intelligence platform that bridges behavioral metrics, physiological telemetry, and academic performance, enabling proactive student support."
+In higher education today, students face a demanding mix of academic expectations, irregular sleep schedules, high screen exposure, and social adjustments. In this walkthrough, I will take you end-to-end through our verified dataset, our data preparation workflow, our interactive Tableau Public dashboard, and the analytical takeaways that emerge from the data.
 
-### Segment 3: Dataset Architecture & Data Quality (01:20 – 02:20)
-"Our analysis is powered by a verified dataset comprising exactly 1,000 collegiate profiles across 16 multi-dimensional variables. These variables span six core domains: demographics such as age and gender; psychological ratings covering stress, anxiety, and depression on standardized 1 to 10 scales; daily lifestyle metrics including sleep duration and study hours; academic telemetry such as class attendance and learning management system activity; physiological telemetry via Heart Rate Variability; and finally, risk classifications and personalized intervention strategies. We conducted rigorous data validation, confirming 100% data completeness with zero missing values and zero duplicate records across all 1,000 student identifiers."
+Whether you are an academic advisor, an institutional counselor, or a data analytics evaluator, this demonstration shows how empirical business intelligence can transform student support from reactive crisis management into proactive, evidence-based care. Let us dive in!
 
-### Segment 4: Analytical Methodology & Calculated Fields (02:20 – 03:15)
-"To prepare this dataset for Tableau, we followed a structured ten-step methodology. In Python, we validated range boundaries and data types. Inside Tableau, we engineered custom calculated fields to enable intuitive visual slicing. For example, we categorized chronological age into three distinct cohorts: below 20 years, 20 to 22 years, and 23 to 25 years. We also classified study intensity into light, moderate, and intensive study tiers. These calculated dimensions allow administrators to isolate specific cohorts and observe non-linear relationships across grades and stress levels."
+---
 
-### Segment 5: Tableau Dashboard Demonstration (03:15 – 05:00)
-"Now, let us examine the published interactive Tableau dashboard. The dashboard is structured into an executive KPI scorecard and six core analytical views. At the top, our KPI scorecards summarize the cohort: an average stress score of 5.45, an average depression score of 5.50, and an average nightly sleep duration of 6.49 hours. 
+## Chapter 2: Problem Statement (00:40 – 01:25)
 
-Looking at our first visualization, Study Hours versus Academic Performance, we observe that moderate study between 3 and 5.5 hours delivers optimal academic scores without triggering severe anxiety. In our scatter plot with linear trendlines, we examine student-level granularity, proving that consistent study combined with high attendance strongly drives academic achievement. 
+Let us examine why this problem matters. Collegiate mental health is often discussed using subjective anecdotes or surveyed only after a student faces severe academic distress.
 
-Crucially, in our physiological view, we track Heart Rate Variability in milliseconds. Students experiencing severe distress show significantly suppressed heart rate variability below 50 milliseconds, providing an objective biomarker that confirms self-reported survey ratings. Finally, our Mental Health Risk distribution reveals that 23.9% of students fall into the high-risk category, proving the necessity of targeted early interventions."
+However, student well-being does not deteriorate in isolation. It is intricately connected to daily lifestyle patterns—such as how many hours a student spends on digital screens, whether they get restorative sleep, their level of physical exercise, and whether they have access to an active support system.
 
-### Segment 6: Key Findings & Institutional Insights (05:00 – 05:50)
-"From our empirical findings, three critical insights emerge. First, sleep duration serves as a powerful natural stress buffer; students sleeping under 6 hours average significantly higher stress levels than those achieving 7.5 hours or more. Second, excessive study hours exhibit diminishing returns when coupled with acute anxiety. And third, social interaction and peer support strongly mitigate depressive symptoms, highlighting that campus engagement is vital for emotional resilience."
+The core objective of this project is to build an analytical framework in Tableau that brings together lifestyle telemetry, behavioral indicators, and standardized psychological scores. By mapping these dimensions together, our goal is not to produce automated clinical diagnoses, but to empower academic mentors and counseling departments with clear, verifiable signals to identify at-risk cohorts early and tailor non-invasive support programs.
 
-### Segment 7: Portfolio Website & Deployment (05:50 – 06:30)
-"To make these findings universally accessible, I developed a responsive, portfolio-quality web application deployed via GitHub Pages and automated GitHub Actions. The web portal features an executive summary, direct live Tableau embed with interactive controls, visualization breakdowns, full academic documentation, and direct source code links, all adhering to modern responsive UX standards and student privacy guidelines."
+---
 
-### Segment 8: Conclusion & Future Scope (06:30 – 07:00)
-"In conclusion, this project illustrates how modern business intelligence tools can transform campus health data into actionable institutional insights. Looking forward, this platform could be expanded with longitudinal wearable sensor streams and semester-long time-series tracking. Thank you for watching, and I invite you to explore the live dashboard and documentation on our GitHub repository."
+## Chapter 3: Dataset Architecture & Source (01:25 – 02:15)
+
+Now, let us inspect the foundational dataset that powers our analysis.
+
+Our verified dataset is structured from collegiate wellness records, comprising exactly 200 student profiles spanning 18 multi-dimensional behavioral, clinical, and academic attributes.
+
+Every student record is tracked under a unique identifier from `STU_0001` through `STU_0200`. The demographic fields capture chronological age, ranging from 18 to 25 years, along with gender classifications across male, female, and other student cohorts.
+
+On the psychological and clinical side, the schema includes standardized Anxiety Scores and Depression Scores measured on continuous 0 to 100 rating scales, alongside a tri-tier categorical Stress Level categorized as Low, Medium, or High.
+
+On the daily habits side, we track daily screen time in hours, sleep quality categorized as Poor, Average, or Good, physical activity levels, and social interaction scores.
+
+Finally, the dataset tracks intervention pathways—such as Cognitive Behavioral Therapy, Counseling, Support Groups, and Meditation—along with intervention durations and measurable progress scores.
+
+---
+
+## Chapter 4: Data Preparation & Calculation Engineering (02:15 – 03:00)
+
+Before importing the dataset into Tableau Desktop, rigorous data hygiene and preparation procedures were executed in Python using Pandas.
+
+First, we verified data completeness: all 200 rows were checked for missing or null values across all 18 columns, confirming a 100% complete dataset. We also verified that there were zero duplicate student records.
+
+Second, correct data types were enforced. Numerical metrics such as daily screen time and progress scores were validated as continuous numeric types, while ordinal attributes like sleep quality and categorical fields like therapy types were structured as discrete dimensions.
+
+Within Tableau, we engineered two vital calculated fields:
+
+First, `Active_Therapy`, written as:
+`IF [Therapy Type] != "No Therapy" THEN 1 ELSE 0 END`.
+This creates a binary measure allowing instant cohort filtering between students receiving structured care versus those unassisted.
+
+Second, `HighStress_PoorSleep`, written as:
+`IF [Stress Level] = "High" AND [Sleep Quality] = "Poor" THEN 1 ELSE 0 END`.
+This flags students facing the compound physiological risk of acute stress combined with severe sleep deprivation.
+
+---
+
+## Chapter 5: Live Tableau Dashboard Walkthrough (03:00 – 04:35)
+
+Now, let us examine the main centerpiece of this project: our live Tableau Public dashboard, titled **"Analysing Mental Health in Student Ecosystem"**.
+
+At the very top, our executive KPI ribbon presents four macro benchmarks computed across all 200 students:
+- Total Cohort Size: Exactly 200 students.
+- Average Anxiety Score: 52.59 out of 100.
+- Average Depression Score: 48.09 out of 100.
+- Average Daily Screen Time: 7.10 hours per day.
+
+Moving directly into our visualizations:
+
+First, on the left, we have the **Stress Level Distribution**. This chart reveals that 107 students—over 53.5% of the entire cohort—fall into Medium Stress, while 49 students, or 24.5%, experience High Stress. Only 44 students report Low Stress. Combined, more than 78% of students experience moderate-to-severe stress.
+
+Second, looking at **Screen Time versus Stress Level**, we observe a clear upward trend. Students reporting Low Stress average 6.00 hours of screen time daily. Medium-stress students average 7.07 hours, while High-stress students surge to 8.12 hours per day.
+
+Third, the **Sleep Quality versus Stress Level** matrix provides one of our most striking insights. Among students with Poor sleep quality, 35 out of 66 suffer from High stress, and 30 suffer from Medium stress—only 1 student with poor sleep had low stress! In stark contrast, out of students who enjoy Good sleep quality, only 2 experienced high stress, while 22 enjoyed low stress.
+
+Fourth, looking at the **Gender Mental Health Comparison**, we see that average anxiety scores remain remarkably tight: 53.32 for females, 51.76 for males, and 53.50 for other cohorts. Depression scores follow a similar pattern: 48.10 for females, 47.88 for males, and 50.38 for other cohorts. This confirms that mental health challenges are widespread across all gender groups.
+
+Fifth and sixth, in our **Stress Level versus Anxiety Score** and **Stress Level versus Depression Score** charts, we observe strong positive progression. Students in the Low Stress tier average an anxiety score of 30.27 and depression score of 26.80. In the High Stress tier, these scores jump to 72.06 for anxiety and 68.78 for depression—more than double the low-stress baseline.
+
+Finally, in our **Ranked Therapy Efficacy** chart, we compare therapeutic progress. Cognitive Behavioral Therapy leads the ranking with an average progress score of 40.80, followed by Professional Counseling at 34.43, Support Groups at 33.10, and Meditation at 32.57. Students with No Therapy record zero progress.
+
+Additionally, our **Mental Health History Prevalence** breakdown highlights that exactly 40% of students—80 out of 200—report prior personal or family mental health history.
+
+---
+
+## Chapter 6: Empirical Findings & Interpretation (04:35 – 05:15)
+
+Synthesizing these visualizations yields three critical conclusions:
+
+First, **Sleep Quality is the Primary Resilience Buffer**. The data indicates that sleep quality is the strongest inverse correlate of high stress. Restorative sleep directly buffers against psychological exhaustion.
+
+Second, **The Digital Fatigue Threshold**. Daily screen time beyond 7.5 hours strongly co-occurs with elevated anxiety and high stress scores, highlighting digital boundary management as a key campus health intervention.
+
+Third, **Structured Therapies Deliver Measurable Progress**. Among available modalities, Cognitive Behavioral Therapy produces the highest measurable progress, outperforming unguided coping.
+
+We must carefully note that these findings represent statistical associations and descriptive observations rather than direct clinical causation. However, as an institutional decision-support system, these empirical signals provide actionable guidance.
+
+---
+
+## Chapter 7: Portfolio Website Demonstration (05:15 – 05:45)
+
+To present this project to stakeholders, evaluators, and recruiters, I built and deployed a dedicated analytics portfolio website hosted on GitHub Pages.
+
+The website features an editorial, high-contrast design system with fluid typography, responsive layout, and structured documentation:
+- An Executive Hero section with quick links to the live Tableau Public dashboard, video demo, and GitHub repository.
+- A live, responsive Tableau embed with interactive reload controls and an automatic fallback card.
+- A detailed Visualization Gallery showcasing each worksheet with its chart type and key findings.
+- An embedded HTML5 video player with subtitle support and direct MP4 download capability.
+- Full documentation links to our project report, verification logs, and source code.
+
+---
+
+## Chapter 8: Conclusion & Acknowledgments (05:45 – 06:10)
+
+In conclusion, **"Analysing Mental Health in Student Ecosystem"** demonstrates how business intelligence tools like Tableau can transform complex health and lifestyle telemetry into intuitive, actionable institutional dashboards.
+
+By bridging empirical data with proactive student wellness strategies, academic institutions can build supportive environments where students thrive both academically and personally.
+
+All source code, data dictionaries, validation pipelines, and reports are openly available on my GitHub repository.
+
+Thank you very much for watching! My name is Parth Pawar, and I look forward to your valuable feedback.

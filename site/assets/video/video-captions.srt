@@ -1,31 +1,299 @@
 1
-00:00:00,000 --> 00:00:37,539
-Hello everyone, and welcome. My name is Parth Pawar, and I'm very excited to walk you through my data analytics project, titled Analysing Me...
+00:00:00,000 --> 00:00:05,112
+Hello everyone! My name is Parth Pawar, and welcome to this complete
 
 2
-00:00:37,539 --> 00:01:19,710
-Let's start with the problem statement. In most universities, student distress is identified far too late. Counselors usually find out about...
+00:00:05,112 --> 00:00:10,224
+walkthrough of my data analytics and business intelligence project: Analysing Mental Health
 
 3
-00:01:19,710 --> 00:02:07,540
-Next, let us look at the dataset. We analyzed a verified dataset of exactly 1,000 collegiate profiles across 16 multi-dimensional variables....
+00:00:10,224 --> 00:00:15,336
+in Student Ecosystem. In modern higher education, undergraduates navigate academic pressures, irregular
 
 4
-00:02:07,540 --> 00:02:48,680
-To transform raw data into visual insights, we followed a structured 10-step analytical methodology. In Python, we audited data types and ra...
+00:00:15,336 --> 00:00:20,448
+sleep, and prolonged digital exposure. Today, I will walk you through our
 
 5
-00:02:48,680 --> 00:04:04,790
-Now, let us examine the published Tableau Public dashboard. The dashboard is organized into an executive scorecard and six core analytical v...
+00:00:20,448 --> 00:00:25,560
+verified dataset, data preparation, live Tableau Public dashboard, and key analytical takeaways.
 
 6
-00:04:04,790 --> 00:04:43,360
-From this analysis, three essential insights stand out. First, sleep duration is the most powerful natural buffer against student stress. St...
+00:00:25,560 --> 00:00:30,830
+Collegiate mental health is often discussed subjectively or addressed only reactively after
 
 7
-00:04:43,360 --> 00:05:14,220
-To share these findings professionally, I developed a modern portfolio website hosted on GitHub Pages. The site features a live, interactive...
+00:00:30,830 --> 00:00:36,101
+severe distress. However, well-being is closely tied to daily lifestyle patterns like
 
 8
-00:05:14,220 --> 00:05:51,770
-In conclusion, this project shows how business intelligence and biostatistical indicators can help universities build proactive student well...
+00:00:36,101 --> 00:00:41,371
+screen time, sleep quality, and support systems. Our objective is to build
+
+9
+00:00:41,371 --> 00:00:46,642
+an interactive Tableau decision-support dashboard that uncovers empirical patterns across lifestyle habits
+
+10
+00:00:46,642 --> 00:00:51,912
+and validated mental health indicators, enabling institutions to offer timely, non-invasive support.
+
+11
+00:00:51,912 --> 00:00:56,804
+Our verified dataset comprises exactly 200 student records across 18 multi-dimensional clinical,
+
+12
+00:00:56,804 --> 00:01:01,696
+behavioral, and academic variables. Each student is tracked by a unique ID
+
+13
+00:01:01,696 --> 00:01:06,588
+from STU 0001 to STU 0200. Variables include age, gender, standardized Anxiety
+
+14
+00:01:06,588 --> 00:01:11,480
+and Depression scores from 0 to 100, categorical Stress Levels, daily screen
+
+15
+00:01:11,480 --> 00:01:16,372
+time, sleep quality, physical activity, and structured therapy pathways including CBT, Counseling,
+
+16
+00:01:16,372 --> 00:01:21,264
+and Meditation.
+
+17
+00:01:21,264 --> 00:01:25,888
+Using Python and Pandas, we confirmed 100 percent data completeness with zero
+
+18
+00:01:25,888 --> 00:01:30,512
+missing values and zero duplicate records. Within Tableau Desktop, we engineered two
+
+19
+00:01:30,512 --> 00:01:35,136
+vital calculated fields: First, Active Therapy, defined as: IF Therapy Type does
+
+20
+00:01:35,136 --> 00:01:39,760
+not equal No Therapy THEN 1 ELSE 0 END, isolating students receiving
+
+21
+00:01:39,760 --> 00:01:44,384
+structured care. Second, High Stress and Poor Sleep, which flags students suffering
+
+22
+00:01:44,384 --> 00:01:49,008
+concurrently from acute stress and severe sleep deprivation.
+
+23
+00:01:49,008 --> 00:01:54,720
+Transitioning to our live Tableau Public dashboard, the top executive KPI ribbon
+
+24
+00:01:54,720 --> 00:02:00,432
+establishes four cohort benchmarks across all 200 students: Total Students: exactly 200
+
+25
+00:02:00,432 --> 00:02:06,144
+undergraduates. Average Anxiety Score: 52.59 out of 100. Average Depression Score: 48.09
+
+26
+00:02:06,144 --> 00:02:11,856
+out of 100. And Average Daily Screen Time: 7.10 hours per day.
+
+27
+00:02:11,856 --> 00:02:17,568
+These benchmarks ground our subsequent visual analysis.
+
+28
+00:02:17,568 --> 00:02:23,179
+Worksheet one examines the Stress Level Distribution across the cohort. 107 students,
+
+29
+00:02:23,179 --> 00:02:28,790
+or 53.5 percent, experience Medium stress. 49 students, or 24.5 percent, experience
+
+30
+00:02:28,790 --> 00:02:34,402
+High stress, while 44 students, or 22 percent, report Low stress. Combined,
+
+31
+00:02:34,402 --> 00:02:40,013
+over 78 percent of surveyed students operate under moderate-to-severe stress, proving that
+
+32
+00:02:40,013 --> 00:02:45,624
+academic stress is widespread rather than an isolated issue.
+
+33
+00:02:45,624 --> 00:02:50,981
+Worksheet two evaluates daily screen time against reported stress levels. A distinct
+
+34
+00:02:50,981 --> 00:02:56,338
+upward trend emerges: students with Low stress average 6.00 hours of screen
+
+35
+00:02:56,338 --> 00:03:01,694
+time daily. Medium-stress students average 7.07 hours, while High-stress students surge to
+
+36
+00:03:01,694 --> 00:03:07,051
+8.12 hours per day. Students facing acute stress consume over two hours
+
+37
+00:03:07,051 --> 00:03:12,408
+more digital screen time daily, highlighting digital fatigue as an institutional concern.
+
+38
+00:03:12,408 --> 00:03:16,568
+Worksheet three explores the cross-tabulation of Sleep Quality against Stress Level. Among
+
+39
+00:03:16,568 --> 00:03:20,728
+students reporting Poor sleep, 35 out of 66 suffer from High stress,
+
+40
+00:03:20,728 --> 00:03:24,888
+30 have Medium stress, and only one maintains low stress! In stark
+
+41
+00:03:24,888 --> 00:03:29,048
+contrast, among students with Good sleep quality, 22 report Low stress and
+
+42
+00:03:29,048 --> 00:03:33,208
+only two suffer from high stress. This confirms sleep quality as a
+
+43
+00:03:33,208 --> 00:03:37,368
+vital personal resilience buffer.
+
+44
+00:03:37,368 --> 00:03:43,718
+Worksheet four benchmarks anxiety and depression across gender cohorts. Average anxiety remains
+
+45
+00:03:43,718 --> 00:03:50,069
+evenly distributed: 53.32 for females, 51.76 for males, and 53.50 for other
+
+46
+00:03:50,069 --> 00:03:56,419
+cohorts. Depression scores follow a similar pattern: 48.10 for females, 47.88 for
+
+47
+00:03:56,419 --> 00:04:02,770
+males, and 50.38 for others. This proves that psychological strain is shared
+
+48
+00:04:02,770 --> 00:04:09,120
+across demographics, making lifestyle factors far more influential determinants.
+
+49
+00:04:09,120 --> 00:04:14,124
+Worksheets five and six analyze how everyday stress translates into clinical symptoms.
+
+50
+00:04:14,124 --> 00:04:19,128
+Anxiety scores rise steeply from 30.27 in Low stress, to 52.85 in
+
+51
+00:04:19,128 --> 00:04:24,132
+Medium stress, reaching 72.06 in High stress. Similarly, depression scores escalate from
+
+52
+00:04:24,132 --> 00:04:29,136
+26.80 in Low stress to 68.78 in High stress—more than two and
+
+53
+00:04:29,136 --> 00:04:34,140
+a half times higher. This steep escalation demonstrates how unmanaged academic stress
+
+54
+00:04:34,140 --> 00:04:39,144
+reliably compounds into acute distress.
+
+55
+00:04:39,144 --> 00:04:44,260
+Worksheets seven and eight evaluate support modalities and mental health history. In
+
+56
+00:04:44,260 --> 00:04:49,376
+Ranked Therapy Efficacy, Cognitive Behavioral Therapy leads with an average progress score
+
+57
+00:04:49,376 --> 00:04:54,492
+of 40.80, followed by Counseling at 34.43 and Support Groups at 33.10.
+
+58
+00:04:54,492 --> 00:04:59,608
+Students with No Therapy record zero progress. Additionally, exactly 40 percent of
+
+59
+00:04:59,608 --> 00:05:04,724
+students, or 80 out of 200, report prior mental health history, emphasizing
+
+60
+00:05:04,724 --> 00:05:09,840
+the importance of early orientation screening.
+
+61
+00:05:09,840 --> 00:05:15,360
+Synthesizing our observations yields three primary findings: First, Sleep Quality is the
+
+62
+00:05:15,360 --> 00:05:20,880
+Paramount Protective Buffer against high stress. Second, Daily screen time exceeding 7.5
+
+63
+00:05:20,880 --> 00:05:26,400
+hours strongly co-occurs with elevated stress and anxiety. Third, Structured interventions like
+
+64
+00:05:26,400 --> 00:05:31,920
+CBT deliver proven symptom progress compared to unguided coping. These empirical signals
+
+65
+00:05:31,920 --> 00:05:37,440
+offer actionable guidance for student welfare initiatives without making unverified medical claims.
+
+66
+00:05:37,440 --> 00:05:41,851
+To showcase this work professionally, I deployed a dedicated portfolio website on
+
+67
+00:05:41,851 --> 00:05:46,262
+GitHub Pages featuring a modern editorial design. The site includes an Executive
+
+68
+00:05:46,262 --> 00:05:50,674
+Hero section, an interactive Tableau embed with reload controls and fallback options,
+
+69
+00:05:50,674 --> 00:05:55,085
+a complete Worksheet Gallery, an embedded HTML5 video player with captions, and
+
+70
+00:05:55,085 --> 00:05:59,496
+links to our technical reports and GitHub repository.
+
+71
+00:05:59,496 --> 00:06:04,013
+In conclusion, Analysing Mental Health in Student Ecosystem demonstrates how business intelligence
+
+72
+00:06:04,013 --> 00:06:08,530
+with Tableau transforms complex student wellness data into intuitive, actionable dashboards. All
+
+73
+00:06:08,530 --> 00:06:13,046
+source code, data dictionaries, workbooks, and documentation are available on my GitHub
+
+74
+00:06:13,046 --> 00:06:17,563
+repository. Thank you for watching! My name is Parth Pawar, and I
+
+75
+00:06:17,563 --> 00:06:22,080
+look forward to your feedback.
