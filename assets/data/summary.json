@@ -1,0 +1,81 @@
+{
+  "project": "Analysing Mental Health in Student Ecosystem",
+  "dataset_metadata": {
+    "source": "Student Mental Health Ecosystem Dataset (Tableau Cleaned Extract)",
+    "source_url": "https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&publish=yes",
+    "rows": 200,
+    "columns": 18,
+    "unique_user_ids": 200,
+    "duplicates": 0,
+    "null_values_count": 0,
+    "privacy_notice": "Individual student identifiers (STU_0001 to STU_0200) and personal health journal indicators are analyzed in aggregate."
+  },
+  "kpis": {
+    "total_students": 200,
+    "avg_anxiety_score": 52.59,
+    "avg_depression_score": 48.09,
+    "avg_screen_time_hrs": 7.10
+  },
+  "stress_distribution": {
+    "Medium": 107,
+    "High": 49,
+    "Low": 44
+  },
+  "screen_time_by_stress": {
+    "High": 8.12,
+    "Medium": 7.07,
+    "Low": 6.00
+  },
+  "sleep_quality_vs_stress": {
+    "Poor": {
+      "High": 35,
+      "Medium": 30,
+      "Low": 1
+    },
+    "Average": {
+      "High": 12,
+      "Medium": 56,
+      "Low": 21
+    },
+    "Good": {
+      "High": 2,
+      "Medium": 21,
+      "Low": 22
+    }
+  },
+  "gender_comparison": {
+    "Female": {
+      "avg_anxiety": 53.32,
+      "avg_depression": 48.10
+    },
+    "Male": {
+      "avg_anxiety": 51.76,
+      "avg_depression": 47.88
+    },
+    "Other": {
+      "avg_anxiety": 53.50,
+      "avg_depression": 50.38
+    }
+  },
+  "stress_vs_anxiety": {
+    "High": 72.06,
+    "Medium": 52.85,
+    "Low": 30.27
+  },
+  "stress_vs_depression": {
+    "High": 68.78,
+    "Medium": 47.37,
+    "Low": 26.80
+  },
+  "therapy_efficacy": {
+    "CBT": 40.80,
+    "Counseling": 34.43,
+    "Support Group": 33.10,
+    "Meditation": 32.57,
+    "No Therapy": 0.00
+  },
+  "mental_health_history": {
+    "No": 120,
+    "Yes": 80
+  }
+}
