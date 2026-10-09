@@ -55,5 +55,7 @@ temp_audio/
 temp_clips/
 temp_frames/
 temp_test/
+temp_tableau_shot.png
+temp_website_shot.png
 *.mp3.tmp
 

@@ -202,37 +202,39 @@ def render_scene_04():
     plt.close()
 
 def render_scene_05():
-    fig = create_base_canvas(5, "Tableau Dashboard: Executive KPI Ribbon")
-    ax = fig.add_axes([0.06, 0.14, 0.88, 0.68])
+    fig = create_base_canvas(5, "Tableau Dashboard: Executive KPI Ribbon & Workbook View")
+    ax = fig.add_axes([0.06, 0.12, 0.88, 0.72])
     ax.axis('off')
     
-    ax.text(0.5, 0.95, "Executive Key Performance Indicators (Macro Benchmarks)", 
-            fontsize=16, weight='bold', color='#0F172A', ha='center', transform=ax.transAxes)
-    
     kpis = [
-        ("Total Cohort Size", "200", "Students", "COUNT([User ID])", "#2563EB", "#EFF6FF"),
-        ("Avg Anxiety Score", "52.59", "Scale 0–100", "AVG([Anxiety Score])", "#0F766E", "#F0FDFA"),
-        ("Avg Depression Score", "48.09", "Scale 0–100", "AVG([Depression Score])", "#7C3AED", "#FAF5FF"),
-        ("Avg Daily Screen Time", "7.10", "Hours / Day", "AVG([Daily Screen Time])", "#EA580C", "#FFF7ED")
+        ("Total Cohort Size", "200", "Students", "#2563EB", "#EFF6FF"),
+        ("Avg Anxiety Score", "52.59", "Scale 0–100", "#0F766E", "#F0FDFA"),
+        ("Avg Depression Score", "48.09", "Scale 0–100", "#7C3AED", "#FAF5FF"),
+        ("Avg Screen Time", "7.10", "Hours / Day", "#EA580C", "#FFF7ED")
     ]
     
-    x_positions = [0.03, 0.275, 0.52, 0.765]
-    for x, (k_title, k_val, k_unit, k_formula, k_color, k_bg) in zip(x_positions, kpis):
-        rect = patches.FancyBboxPatch((x, 0.25), 0.21, 0.58, boxstyle="round,pad=0.03",
-                                      facecolor=k_bg, edgecolor=k_color, linewidth=2, transform=ax.transAxes)
+    x_positions = [0.01, 0.26, 0.51, 0.76]
+    for x, (k_title, k_val, k_unit, k_color, k_bg) in zip(x_positions, kpis):
+        rect = patches.FancyBboxPatch((x, 0.68), 0.23, 0.28, boxstyle="round,pad=0.02",
+                                      facecolor=k_bg, edgecolor=k_color, linewidth=1.5, transform=ax.transAxes)
         ax.add_patch(rect)
-        ax.text(x + 0.105, 0.72, k_title, fontsize=13, weight='bold', color='#0F172A', ha='center', transform=ax.transAxes)
-        ax.text(x + 0.105, 0.50, k_val, fontsize=34, weight='bold', color=k_color, ha='center', transform=ax.transAxes)
-        ax.text(x + 0.105, 0.40, k_unit, fontsize=12, color='#64748B', ha='center', transform=ax.transAxes)
+        ax.text(x + 0.115, 0.89, k_title, fontsize=11, weight='bold', color='#0F172A', ha='center', transform=ax.transAxes)
+        ax.text(x + 0.115, 0.77, k_val, fontsize=22, weight='bold', color=k_color, ha='center', transform=ax.transAxes)
+        ax.text(x + 0.115, 0.71, k_unit, fontsize=9.5, color='#64748B', ha='center', transform=ax.transAxes)
         
-        # formula subtext
-        f_rect = patches.FancyBboxPatch((x + 0.015, 0.28), 0.18, 0.08, boxstyle="round,pad=0.01",
-                                        facecolor='#FFFFFF', edgecolor='#E2E8F0', transform=ax.transAxes)
-        ax.add_patch(f_rect)
-        ax.text(x + 0.105, 0.32, k_formula, fontsize=9.5, color='#475569', ha='center', fontfamily='monospace', transform=ax.transAxes)
-        
-    ax.text(0.5, 0.10, "Calculated in Tableau across all 200 surveyed undergraduate student profiles.", 
-            fontsize=12, color='#64748B', ha='center', transform=ax.transAxes)
+    # Embed authentic Tableau Public dashboard capture
+    if os.path.exists('temp_tableau_shot.png'):
+        img = Image.open('temp_tableau_shot.png')
+        ax_tab = fig.add_axes([0.08, 0.12, 0.84, 0.48])
+        ax_tab.imshow(img)
+        ax_tab.axis('off')
+        # Border around Tableau capture
+        rect_border = patches.Rectangle((0, 0), 1, 1, fill=False, edgecolor='#CBD5E1', linewidth=1.5, transform=ax_tab.transAxes)
+        ax_tab.add_patch(rect_border)
+        ax.text(0.5, 0.63, "Authentic Tableau Public Workbook • Live Interactive BI Telemetry", 
+                fontsize=11, weight='bold', color='#0F766E', ha='center', transform=ax.transAxes)
+    else:
+        ax.text(0.5, 0.35, "Tableau Public Dashboard Walkthrough", fontsize=16, color='#64748B', ha='center', transform=ax.transAxes)
     
     plt.savefig('temp_frames/scene_05_kpi.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()

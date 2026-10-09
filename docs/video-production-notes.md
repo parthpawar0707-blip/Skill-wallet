@@ -18,7 +18,7 @@
 - **Audio Sample Rate:** 24,000 Hz, Mono
 - **Audio Bitrate:** ~110–144 kb/s
 - **Total Duration:** 375.05 seconds (06:15.05 — exactly within the 5:45 to 6:30 target window)
-- **Total File Size:** 9,038,251 bytes (~8.62 MB — lightweight, streamable, under GitHub 100MB limit)
+- **Total File Size:** 9,119,503 bytes (~8.70 MB — lightweight, streamable, under GitHub 100MB limit)
 
 ---
 
@@ -26,7 +26,7 @@
 
 | Asset Name | Repository Path | Size / Duration | Format / Purpose |
 | :--- | :--- | :--- | :--- |
-| **Walkthrough Video** | `site/assets/video/student-mental-health-demo.mp4` | 8.62 MB / 06:15 | Web-optimized H.264/AAC MP4 |
+| **Walkthrough Video** | `site/assets/video/student-mental-health-demo.mp4` | 8.70 MB / 06:15 | Web-optimized H.264/AAC MP4 |
 | **Master Narration** | `site/assets/video/narration.mp3` | 7.50 MB / 06:15 | Master voiceover track |
 | **Video Poster (JPG)** | `site/assets/video/video-poster.jpg` | 79.9 KB | 1280×720 video splash frame |
 | **Video Poster (PNG)** | `site/assets/images/video-poster.png` | 209.8 KB | High-fidelity site image asset |
