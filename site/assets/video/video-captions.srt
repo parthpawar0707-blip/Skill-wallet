@@ -1,295 +1,331 @@
 1
-00:00:00,000 --> 00:00:04,661
-Hello everyone! My name is Parth Pawar, and welcome to the
+00:00:00,000 --> 00:00:04,200
+Hello everyone! My name is Parth Pawar, and welcome to this
 
 2
-00:00:04,661 --> 00:00:09,322
-project walkthrough of Analysing Mental Health in Student Ecosystem. In modern
+00:00:04,200 --> 00:00:08,400
+complete walkthrough of Analysing Mental Health in Student Ecosystem. Today, undergraduates
 
 3
-00:00:09,322 --> 00:00:13,982
-higher education, undergraduates navigate heavy academic pressures, irregular sleep, and prolonged
+00:00:08,400 --> 00:00:12,600
+navigate heavy academic pressures, irregular sleep schedules, and prolonged screen exposure.
 
 4
-00:00:13,982 --> 00:00:18,643
-screen exposure. Today, I'll walk you through our verified dataset, Tableau
+00:00:12,600 --> 00:00:16,800
+In this walkthrough, I will guide you through our verified dataset,
 
 5
-00:00:18,643 --> 00:00:23,304
-Public dashboard, and key analytical takeaways.
+00:00:16,800 --> 00:00:21,000
+our interactive Tableau Public dashboard, and the empirical takeaways that emerge
 
 6
-00:00:23,304 --> 00:00:28,498
-Collegiate mental health is often discussed subjectively or addressed only reactively
+00:00:21,000 --> 00:00:25,200
+from the data.
 
 7
-00:00:28,498 --> 00:00:33,691
-after severe distress. Well-being is closely tied to daily lifestyle factors
+00:00:25,200 --> 00:00:29,604
+Collegiate mental health is frequently addressed only reactively after severe distress.
 
 8
-00:00:33,691 --> 00:00:38,885
-like screen time, sleep quality, and support systems. Our goal is
+00:00:29,604 --> 00:00:34,008
+However, well-being is intricately connected to daily lifestyle patterns like screen
 
 9
-00:00:38,885 --> 00:00:44,078
-to build an interactive Tableau decision-support dashboard that uncovers empirical patterns
+00:00:34,008 --> 00:00:38,412
+time, sleep quality, and support systems. Our objective is building an
 
 10
-00:00:44,078 --> 00:00:49,272
-across student lifestyles, helping academic institutions offer proactive, timely support.
+00:00:38,412 --> 00:00:42,816
+interactive Tableau decision-support dashboard that reveals empirical patterns across student lifestyles
 
 11
-00:00:49,272 --> 00:00:54,691
-Our verified dataset contains exactly 200 student records across 18 multi-dimensional
+00:00:42,816 --> 00:00:47,220
+and clinical scores, empowering mentors and counselors to offer timely, proactive
 
 12
-00:00:54,691 --> 00:01:00,110
-behavioral and academic variables. Each student is tracked from STU 0001
+00:00:47,220 --> 00:00:51,624
+support.
 
 13
-00:01:00,110 --> 00:01:05,530
-to STU 0200. Attributes include age, gender, clinical Anxiety and Depression
+00:00:51,624 --> 00:00:57,036
+Our verified dataset contains exactly 200 student records across 18 multi-dimensional
 
 14
-00:01:05,530 --> 00:01:10,949
-scores from 0 to 100, categorical Stress Levels, daily screen time,
+00:00:57,036 --> 00:01:02,448
+behavioral, clinical, and academic variables, tracked from STU 0001 to STU
 
 15
-00:01:10,949 --> 00:01:16,368
-sleep quality, and therapy pathways including CBT and Counseling.
+00:01:02,448 --> 00:01:07,860
+0200. Demographics capture age 18 to 25 and gender cohorts. Clinical
 
 16
-00:01:16,368 --> 00:01:21,230
-Using Python and Pandas, we confirmed 100 percent data completeness with
+00:01:07,860 --> 00:01:13,272
+scales measure Anxiety and Depression from 0 to 100, alongside categorical
 
 17
-00:01:21,230 --> 00:01:26,093
-zero null values and zero duplicates. In Tableau Desktop, we engineered
+00:01:13,272 --> 00:01:18,684
+Stress Levels. Lifestyle telemetry tracks daily screen time in hours, sleep
 
 18
-00:01:26,093 --> 00:01:30,955
-two vital calculated fields: First, Active Therapy, isolating students receiving structured
+00:01:18,684 --> 00:01:24,096
+quality, physical activity, and therapeutic pathways like CBT and Counseling.
 
 19
-00:01:30,955 --> 00:01:35,818
-care. Second, High Stress and Poor Sleep, flagging students suffering concurrently
+00:01:24,096 --> 00:01:28,676
+Using Python and Pandas, we verified zero null values and zero
 
 20
-00:01:35,818 --> 00:01:40,680
-from acute stress and severe sleep disruption.
+00:01:28,676 --> 00:01:33,256
+duplicates across all records. In Tableau Desktop, we engineered two vital
 
 21
-00:01:40,680 --> 00:01:46,738
-Transitioning to our live Tableau dashboard, the executive KPI ribbon establishes
+00:01:33,256 --> 00:01:37,836
+calculated fields: First, Active Therapy, defined as: IF Therapy Type does
 
 22
-00:01:46,738 --> 00:01:52,795
-four cohort benchmarks across all 200 students: Total Students: exactly 200
+00:01:37,836 --> 00:01:42,416
+not equal No Therapy THEN 1 ELSE 0 END, isolating students
 
 23
-00:01:52,795 --> 00:01:58,853
-undergraduates. Average Anxiety Score: 52.59 out of 100. Average Depression Score:
+00:01:42,416 --> 00:01:46,996
+in institutional care. Second, High Stress and Poor Sleep, flagging students
 
 24
-00:01:58,853 --> 00:02:04,910
-48.09 out of 100. And Average Daily Screen Time: 7.10 hours
+00:01:46,996 --> 00:01:51,576
+suffering concurrently from acute stress and severe sleep disruption.
 
 25
-00:02:04,910 --> 00:02:10,968
-per day. These benchmarks ground our subsequent visual analysis.
+00:01:51,576 --> 00:01:57,422
+On our live Tableau Public dashboard, the executive KPI ribbon establishes
 
 26
-00:02:10,968 --> 00:02:16,723
-Worksheet one examines the Stress Level Distribution across the cohort. 107
+00:01:57,422 --> 00:02:03,269
+four cohort benchmarks across all 200 students: Total Students: exactly 200
 
 27
-00:02:16,723 --> 00:02:22,478
-students, or 53.5 percent, experience Medium stress. 49 students, or 24.5
+00:02:03,269 --> 00:02:09,115
+undergraduates. Average Anxiety Score: 52.59 out of 100. Average Depression Score:
 
 28
-00:02:22,478 --> 00:02:28,234
-percent, experience High stress, while 44 students, or 22 percent, report
+00:02:09,115 --> 00:02:14,962
+48.09 out of 100. And Average Daily Screen Time: 7.10 hours
 
 29
-00:02:28,234 --> 00:02:33,989
-Low stress. Combined, over 78 percent of surveyed students operate under
+00:02:14,962 --> 00:02:20,808
+per day. These metrics ground our entire visual analysis.
 
 30
-00:02:33,989 --> 00:02:39,744
-moderate to severe stress, proving this is a widespread campus challenge.
+00:02:20,808 --> 00:02:26,467
+Worksheet one examines Stress Level Distribution across the cohort. 107 students,
 
 31
-00:02:39,744 --> 00:02:45,053
-Worksheet two evaluates daily screen time against reported stress levels. A
+00:02:26,467 --> 00:02:32,126
+or 53.5 percent, experience Medium stress. 49 students, or 24.5 percent,
 
 32
-00:02:45,053 --> 00:02:50,362
-distinct upward trend emerges: students with Low stress average 6.00 hours
+00:02:32,126 --> 00:02:37,786
+experience High stress, while 44 students, or 22 percent, report Low
 
 33
-00:02:50,362 --> 00:02:55,670
-of screen time. Medium stress students average 7.07 hours, while High
+00:02:37,786 --> 00:02:43,445
+stress. Combined, over 78 percent of surveyed students operate under moderate
 
 34
-00:02:55,670 --> 00:03:00,979
-stress students surge to 8.12 hours daily. High stress students spend
+00:02:43,445 --> 00:02:49,104
+to severe stress, proving this is a widespread campus challenge.
 
 35
-00:03:00,979 --> 00:03:06,288
-over two additional hours on screens each day, highlighting digital fatigue.
+00:02:49,104 --> 00:02:54,317
+Worksheet two evaluates daily screen time against reported stress levels. A
 
 36
-00:03:06,288 --> 00:03:10,440
-Worksheet three explores Sleep Quality against Stress Level. Among students reporting
+00:02:54,317 --> 00:02:59,530
+distinct upward trend emerges: students with Low stress average 6.00 hours
 
 37
-00:03:10,440 --> 00:03:14,592
-Poor sleep, 35 out of 66 suffer from High stress, 30
+00:02:59,530 --> 00:03:04,742
+of screen time. Medium stress students average 7.07 hours, while High
 
 38
-00:03:14,592 --> 00:03:18,744
-report Medium stress, and only one maintains Low stress. Conversely, among
+00:03:04,742 --> 00:03:09,955
+stress students surge to 8.12 hours daily. High-stress students spend over
 
 39
-00:03:18,744 --> 00:03:22,896
-students with Good sleep quality, 22 report Low stress and only
+00:03:09,955 --> 00:03:15,168
+two additional hours on screens each day, highlighting digital fatigue.
 
 40
-00:03:22,896 --> 00:03:27,048
-two report High stress. This confirms sleep quality as a vital
+00:03:15,168 --> 00:03:19,180
+Worksheet three explores Sleep Quality against Stress Level. Among students reporting
 
 41
-00:03:27,048 --> 00:03:31,200
-resilience buffer.
+00:03:19,180 --> 00:03:23,192
+Poor sleep, 35 out of 66 suffer from High stress, 30
 
 42
-00:03:31,200 --> 00:03:36,764
-Worksheet four benchmarks anxiety and depression across gender cohorts. Average anxiety
+00:03:23,192 --> 00:03:27,204
+report Medium stress, and only one maintains Low stress. Conversely, among
 
 43
-00:03:36,764 --> 00:03:42,328
-remains evenly distributed: 53.32 for females, 51.76 for males, and 53.50
+00:03:27,204 --> 00:03:31,216
+students with Good sleep, 22 report Low stress and only two
 
 44
-00:03:42,328 --> 00:03:47,892
-for other cohorts. Depression scores follow a similar pattern: 48.10 for
+00:03:31,216 --> 00:03:35,228
+report High stress. This confirms sleep quality as a vital resilience
 
 45
-00:03:47,892 --> 00:03:53,456
-females, 47.88 for males, and 50.38 for others. This proves psychological
+00:03:35,228 --> 00:03:39,240
+buffer.
 
 46
-00:03:53,456 --> 00:03:59,020
-strain is evenly shared across demographics, making lifestyle factors the key
+00:03:39,240 --> 00:03:44,852
+Worksheet four benchmarks mental health across gender cohorts. Average anxiety remains
 
 47
-00:03:59,020 --> 00:04:04,584
-drivers.
+00:03:44,852 --> 00:03:50,464
+evenly distributed: 53.32 for females, 51.76 for males, and 53.50 for
 
 48
-00:04:04,584 --> 00:04:09,400
-Worksheets five and six analyze how stress escalates into clinical symptoms.
+00:03:50,464 --> 00:03:56,076
+other cohorts. Depression scores follow a similar pattern: 48.10 for females,
 
 49
-00:04:09,400 --> 00:04:14,216
-Anxiety scores rise steeply from 30.27 in Low stress, to 52.85
+00:03:56,076 --> 00:04:01,688
+47.88 for males, and 50.38 for others. This statistical parity shows
 
 50
-00:04:14,216 --> 00:04:19,032
-in Medium stress, reaching 72.06 in High stress. Similarly, depression scores
+00:04:01,688 --> 00:04:07,300
+psychological strain is evenly shared across demographics, making lifestyle factors the
 
 51
-00:04:19,032 --> 00:04:23,848
-escalate from 26.80 in Low stress to 68.78 in High stress,
+00:04:07,300 --> 00:04:12,912
+primary differentiators.
 
 52
-00:04:23,848 --> 00:04:28,664
-over two and a half times higher. Chronic stress reliably compounds
+00:04:12,912 --> 00:04:17,640
+Worksheets five and six analyze how stress escalates into clinical symptoms.
 
 53
-00:04:28,664 --> 00:04:33,480
-into acute distress.
+00:04:17,640 --> 00:04:22,368
+Anxiety scores rise steeply from 30.27 in Low stress, to 52.85
 
 54
-00:04:33,480 --> 00:04:38,224
-Worksheets seven and eight evaluate support modalities and mental health history.
+00:04:22,368 --> 00:04:27,096
+in Medium stress, reaching 72.06 in High stress. Similarly, depression scores
 
 55
-00:04:38,224 --> 00:04:42,968
-In Ranked Therapy Efficacy, Cognitive Behavioral Therapy leads with an average
+00:04:27,096 --> 00:04:31,824
+escalate from 26.80 in Low stress to 68.78 in High stress—over
 
 56
-00:04:42,968 --> 00:04:47,712
-progress score of 40.80, followed by Counseling at 34.43 and Support
+00:04:31,824 --> 00:04:36,552
+two and a half times higher. Chronic stress reliably compounds into
 
 57
-00:04:47,712 --> 00:04:52,456
-Groups at 33.10. Meanwhile, exactly 40 percent of students, or 80
+00:04:36,552 --> 00:04:41,280
+acute distress.
 
 58
-00:04:52,456 --> 00:04:57,200
-out of 200, report prior mental health history, urging early proactive
+00:04:41,280 --> 00:04:45,880
+Worksheets seven and eight evaluate support modalities and history. In Ranked
 
 59
-00:04:57,200 --> 00:05:01,944
-screening.
+00:04:45,880 --> 00:04:50,480
+Therapy Efficacy, Cognitive Behavioral Therapy leads with an average progress score
 
 60
-00:05:01,944 --> 00:05:07,378
-Synthesizing our observations yields three primary findings: First, Sleep Quality is
+00:04:50,480 --> 00:04:55,080
+of 40.80, followed by Counseling at 34.43 and Support Groups at
 
 61
-00:05:07,378 --> 00:05:12,811
-the Paramount Protective Buffer against high stress. Second, Daily screen time
+00:04:55,080 --> 00:04:59,680
+33.10. Meanwhile, exactly 40 percent of students, or 80 out of
 
 62
-00:05:12,811 --> 00:05:18,245
-exceeding 7.5 hours strongly co-occurs with elevated stress and anxiety. Third,
+00:04:59,680 --> 00:05:04,280
+200, report prior mental health history, underscoring the need for early
 
 63
-00:05:18,245 --> 00:05:23,678
-Structured interventions like CBT deliver proven symptom progress compared to unguided
+00:05:04,280 --> 00:05:08,880
+screening.
 
 64
-00:05:23,678 --> 00:05:29,112
-coping. These signals provide actionable guidance for student welfare initiatives.
+00:05:08,880 --> 00:05:13,176
+On the published Tableau dashboard, interactive cross-filtering allows advisors to segment
 
 65
-00:05:29,112 --> 00:05:33,667
-To present this work professionally, I deployed a dedicated portfolio website
+00:05:13,176 --> 00:05:17,472
+the cohort by stress level or sleep quality. Clicking a high-stress
 
 66
-00:05:33,667 --> 00:05:38,222
-on GitHub Pages featuring a modern editorial design. The site includes
+00:05:17,472 --> 00:05:21,768
+tier dynamically updates all connected worksheets, isolating vulnerable students and enabling
 
 67
-00:05:38,222 --> 00:05:42,778
-an Executive Hero section, an interactive Tableau embed with reload controls
+00:05:21,768 --> 00:05:26,064
+targeted intervention planning in real time.
 
 68
-00:05:42,778 --> 00:05:47,333
-and fallback options, a complete Worksheet Gallery, an embedded HTML5 video
+00:05:26,064 --> 00:05:31,124
+Synthesizing our observations yields three primary findings: First, Sleep Quality is
 
 69
-00:05:47,333 --> 00:05:51,888
-player with captions, and direct links to our documentation.
+00:05:31,124 --> 00:05:36,184
+the Paramount Protective Buffer against high stress—restorative sleep strongly shields students
 
 70
-00:05:51,888 --> 00:05:56,520
-In conclusion, Analysing Mental Health in Student Ecosystem demonstrates how Tableau
+00:05:36,184 --> 00:05:41,244
+from distress. Second, daily screen time exceeding 7.5 hours strongly co-occurs
 
 71
-00:05:56,520 --> 00:06:01,152
-transforms complex student wellness data into intuitive, actionable dashboards. All source
+00:05:41,244 --> 00:05:46,304
+with elevated anxiety and burnout. Third, structured interventions like CBT deliver
 
 72
-00:06:01,152 --> 00:06:05,784
-datasets, data dictionaries, workbooks, and documentation are available on my GitHub
+00:05:46,304 --> 00:05:51,364
+proven symptom progress compared to unguided coping. These empirical signals offer
 
 73
-00:06:05,784 --> 00:06:10,416
-repository. Thank you for watching! My name is Parth Pawar, and
+00:05:51,364 --> 00:05:56,424
+actionable guidance for campus welfare initiatives.
 
 74
-00:06:10,416 --> 00:06:15,048
+00:05:56,424 --> 00:06:00,984
+To present this work professionally, I deployed a dedicated portfolio website
+
+75
+00:06:00,984 --> 00:06:05,544
+on GitHub Pages featuring a modern editorial design. The site includes
+
+76
+00:06:05,544 --> 00:06:10,104
+an Executive Hero section, an interactive Tableau embed with reload controls
+
+77
+00:06:10,104 --> 00:06:14,664
+and fallback options, a Worksheet Gallery, an embedded HTML5 video player
+
+78
+00:06:14,664 --> 00:06:19,224
+with captions, and direct links to our documentation and repository.
+
+79
+00:06:19,224 --> 00:06:23,779
+In conclusion, Analysing Mental Health in Student Ecosystem demonstrates how Tableau
+
+80
+00:06:23,779 --> 00:06:28,334
+transforms complex student wellness data into intuitive, actionable dashboards. All source
+
+81
+00:06:28,334 --> 00:06:32,890
+datasets, data dictionaries, workbooks, and documentation are available on my GitHub
+
+82
+00:06:32,890 --> 00:06:37,445
+repository. Thank you for watching! My name is Parth Pawar, and
+
+83
+00:06:37,445 --> 00:06:42,000
 I look forward to your thoughts.

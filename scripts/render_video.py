@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from PIL import Image
 
-# Set high-quality styling
+# Styling configuration
 plt.rcParams['font.sans-serif'] = 'DejaVu Sans'
 plt.rcParams['axes.edgecolor'] = '#CBD5E1'
 plt.rcParams['axes.linewidth'] = 0.8
@@ -53,24 +53,21 @@ def create_base_canvas(chapter_num, chapter_title, subheader=""):
     
     return fig
 
-# ----------------- SCENE GENERATORS ----------------- #
+# ----------------- 15 SCENE GENERATORS ----------------- #
 
-def render_scene_01():
+def render_chap_01_intro():
     fig = plt.figure(figsize=(12.8, 7.2), dpi=100)
     fig.patch.set_facecolor('#0B1329')
     ax = fig.add_axes([0, 0, 1, 1])
     ax.axis('off')
     
-    # Decorative elements
     ax.add_patch(patches.Rectangle((0, 0.85), 1, 0.15, facecolor='#0F172A', transform=ax.transAxes))
     ax.add_patch(patches.Rectangle((0, 0.84), 1, 0.01, facecolor='#0F766E', transform=ax.transAxes))
     
-    # Title badge
-    ax.text(0.5, 0.72, "DATA ANALYTICS & BUSINESS INTELLIGENCE PORTFOLIO", color='#2DD4BF', fontsize=14, weight='bold', ha='center')
-    ax.text(0.5, 0.58, "Analysing Mental Health in Student Ecosystem", color='#FFFFFF', fontsize=28, weight='bold', ha='center')
-    ax.text(0.5, 0.49, "A Multi-Dimensional Tableau Business Intelligence & Behavioral Analytics Investigation", color='#94A3B8', fontsize=15, ha='center')
+    ax.text(0.5, 0.74, "DATA ANALYTICS & BUSINESS INTELLIGENCE PORTFOLIO", color='#2DD4BF', fontsize=14, weight='bold', ha='center')
+    ax.text(0.5, 0.60, "Analysing Mental Health in Student Ecosystem", color='#FFFFFF', fontsize=28, weight='bold', ha='center')
+    ax.text(0.5, 0.51, "A Multi-Dimensional Tableau Business Intelligence & Behavioral Analytics Investigation", color='#94A3B8', fontsize=15, ha='center')
     
-    # Metadata cards
     box_props = dict(boxstyle='round,pad=0.8', facecolor='#1E293B', edgecolor='#334155', linewidth=1.5)
     meta_text = (
         "  Author: Parth Pawar          |   Tools: Tableau Desktop, Tableau Public, Python (Pandas)  \n"
@@ -78,25 +75,24 @@ def render_scene_01():
         "  Platform: GitHub Pages CI/CD |   Verification: 100% Complete (0 Missing, 0 Duplicates)    "
     )
     ax.text(0.5, 0.30, meta_text, color='#E2E8F0', fontsize=13, ha='center', bbox=box_props, linespacing=1.6)
-    
     ax.text(0.5, 0.12, "Interactive Tableau Public Dashboard • Verified Empirical Findings • Project Walkthrough", color='#64748B', fontsize=12, ha='center')
     
-    plt.savefig('temp_frames/scene_01_intro.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_01_intro.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_02():
+def render_chap_02_problem():
     fig = create_base_canvas(2, "Problem Statement & Analytical Objectives")
     ax = fig.add_axes([0.08, 0.14, 0.84, 0.68])
     ax.axis('off')
     
     cards = [
-        ("Academic & Environmental Pressures", 
+        ("1. Academic & Environmental Pressures", 
          "Undergraduate students routinely navigate heavy examination schedules,\nGPA benchmarking, erratic sleep cycles, and extended digital exposure\nthat heighten emotional vulnerability and academic burnout.",
          "#EFF6FF", "#2563EB"),
-        ("Multi-Dimensional Lifestyle Telemetry", 
+        ("2. Multi-Dimensional Lifestyle Telemetry", 
          "Mental health does not deteriorate in isolation. We analyze objective lifestyle\nindicators: daily screen time (hrs), sleep quality (Poor, Average, Good),\nphysical activity levels, and peer social interaction scores.",
          "#F0FDFA", "#0F766E"),
-        ("Proactive Institutional Decision Support", 
+        ("3. Proactive Institutional Decision Support", 
          "Traditional counseling is often sought reactively after severe crisis.\nThis Tableau dashboard provides academic mentors and healthcare centers\nwith empirical risk signals for timely, non-invasive support interventions.",
          "#FAF5FF", "#7C3AED")
     ]
@@ -110,10 +106,10 @@ def render_scene_02():
         ax.text(0.06, y - 0.15, desc, fontsize=12, color='#334155', transform=ax.transAxes, linespacing=1.4)
         y -= 0.30
         
-    plt.savefig('temp_frames/scene_02_problem.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_02_problem.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_03():
+def render_chap_03_dataset():
     fig = create_base_canvas(3, "Dataset Architecture & Source Verification")
     
     # Left table: Schema Overview
@@ -162,10 +158,10 @@ def render_scene_03():
         ax_right.text(0.06, y - 0.15, m_sub, fontsize=9.5, color='#94A3B8', transform=ax_right.transAxes)
         y -= 0.22
         
-    plt.savefig('temp_frames/scene_03_dataset.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_03_dataset.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_04():
+def render_chap_04_methodology():
     fig = create_base_canvas(4, "Data Cleansing & Calculation Engineering")
     ax = fig.add_axes([0.08, 0.14, 0.84, 0.68])
     ax.axis('off')
@@ -198,11 +194,11 @@ def render_scene_04():
         ax.text(0.05, y - 0.26, c_desc, fontsize=11.5, color='#475569', transform=ax.transAxes, linespacing=1.4)
         y -= 0.44
         
-    plt.savefig('temp_frames/scene_04_methodology.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_04_methodology.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_05():
-    fig = create_base_canvas(5, "Tableau Dashboard: Executive KPI Ribbon & Workbook View")
+def render_chap_05a_kpi():
+    fig = create_base_canvas(5, "Tableau Dashboard: Executive KPI Ribbon")
     ax = fig.add_axes([0.06, 0.12, 0.88, 0.72])
     ax.axis('off')
     
@@ -223,12 +219,12 @@ def render_scene_05():
         ax.text(x + 0.115, 0.71, k_unit, fontsize=9.5, color='#64748B', ha='center', transform=ax.transAxes)
         
     # Embed authentic Tableau Public dashboard capture
-    if os.path.exists('temp_tableau_shot.png'):
-        img = Image.open('temp_tableau_shot.png')
+    tab_shot_path = 'docs/tableau_capture.png'
+    if os.path.exists(tab_shot_path):
+        img = Image.open(tab_shot_path)
         ax_tab = fig.add_axes([0.08, 0.12, 0.84, 0.48])
         ax_tab.imshow(img)
         ax_tab.axis('off')
-        # Border around Tableau capture
         rect_border = patches.Rectangle((0, 0), 1, 1, fill=False, edgecolor='#CBD5E1', linewidth=1.5, transform=ax_tab.transAxes)
         ax_tab.add_patch(rect_border)
         ax.text(0.5, 0.63, "Authentic Tableau Public Workbook • Live Interactive BI Telemetry", 
@@ -236,13 +232,12 @@ def render_scene_05():
     else:
         ax.text(0.5, 0.35, "Tableau Public Dashboard Walkthrough", fontsize=16, color='#64748B', ha='center', transform=ax.transAxes)
     
-    plt.savefig('temp_frames/scene_05_kpi.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_05a_kpi.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_06():
-    fig = create_base_canvas(6, "Worksheet 1: Stress Level Distribution")
+def render_chap_05b_stress_dist():
+    fig = create_base_canvas(5, "Worksheet 1: Stress Level Distribution")
     
-    # Left: Actual bar chart
     ax_chart = fig.add_axes([0.08, 0.18, 0.48, 0.62])
     counts = df['Stress Level'].value_counts()[['Low', 'Medium', 'High']]
     colors = ['#10B981', '#F59E0B', '#EF4444']
@@ -259,7 +254,6 @@ def render_scene_06():
     ax_chart.set_title("Stress Level Distribution across Cohort", fontsize=13, weight='bold', pad=12, color='#0F172A')
     ax_chart.grid(axis='y', linestyle='--', alpha=0.5)
     
-    # Right: Analytical takeaway card
     ax_info = fig.add_axes([0.62, 0.18, 0.32, 0.62])
     ax_info.axis('off')
     
@@ -270,10 +264,10 @@ def render_scene_06():
     ax_info.text(0.08, 0.88, "Key Analytical Observations", fontsize=13, weight='bold', color='#0F172A', transform=ax_info.transAxes)
     
     pts = [
-        ("Medium Stress Predominance:", "107 students (53.5%) operate in the\nmedium stress tier, forming the majority."),
+        ("Medium Stress Majority:", "107 students (53.5%) operate in the\nmedium stress tier, forming the majority."),
         ("High Stress Prevalence:", "49 students (24.5%) suffer from acute\nhigh stress requiring priority support."),
         ("Low Stress Cohort:", "Only 44 students (22.0%) report low\nstress levels."),
-        ("Institutional Takeaway:", "Over 78% of students experience\nmoderate-to-severe stress levels.")
+        ("Cohort-Wide Impact:", "Over 78% of students experience\nmoderate-to-severe stress levels.")
     ]
     
     y = 0.74
@@ -282,11 +276,11 @@ def render_scene_06():
         ax_info.text(0.08, y - 0.11, desc, fontsize=10.5, color='#475569', transform=ax_info.transAxes, linespacing=1.3)
         y -= 0.22
         
-    plt.savefig('temp_frames/scene_06_stress_dist.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_05b_stress_dist.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_07():
-    fig = create_base_canvas(7, "Worksheet 2: Daily Screen Time vs Stress Level")
+def render_chap_05c_screen_time():
+    fig = create_base_canvas(5, "Worksheet 2: Daily Screen Time vs Stress Level")
     
     ax_chart = fig.add_axes([0.08, 0.18, 0.48, 0.62])
     screen_means = df.groupby('Stress Level')['Daily Screen Time (hrs)'].mean()[['Low', 'Medium', 'High']]
@@ -325,11 +319,11 @@ def render_scene_07():
         ax_info.text(0.08, y - 0.11, desc, fontsize=10.5, color='#475569', transform=ax_info.transAxes, linespacing=1.3)
         y -= 0.22
         
-    plt.savefig('temp_frames/scene_07_screen_time.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_05c_screen_time.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_08():
-    fig = create_base_canvas(8, "Worksheet 3: Sleep Quality vs Stress Level")
+def render_chap_05d_sleep_quality():
+    fig = create_base_canvas(5, "Worksheet 3: Sleep Quality vs Stress Level")
     
     ax_chart = fig.add_axes([0.08, 0.18, 0.48, 0.62])
     ct = pd.crosstab(df['Sleep Quality'], df['Stress Level'])[['Low', 'Medium', 'High']].reindex(['Poor', 'Average', 'Good'])
@@ -363,11 +357,11 @@ def render_scene_08():
         ax_info.text(0.08, y - 0.11, desc, fontsize=10.5, color='#475569', transform=ax_info.transAxes, linespacing=1.3)
         y -= 0.22
         
-    plt.savefig('temp_frames/scene_08_sleep_quality.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_05d_sleep_quality.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_09():
-    fig = create_base_canvas(9, "Worksheet 4: Gender Mental Health Comparison")
+def render_chap_05e_gender():
+    fig = create_base_canvas(5, "Worksheet 4: Gender Mental Health Comparison")
     
     ax_chart = fig.add_axes([0.08, 0.18, 0.48, 0.62])
     g_means = df.groupby('Gender')[['Anxiety Score', 'Depression Score']].mean()
@@ -412,13 +406,12 @@ def render_scene_09():
         ax_info.text(0.08, y - 0.11, desc, fontsize=10.5, color='#475569', transform=ax_info.transAxes, linespacing=1.3)
         y -= 0.22
         
-    plt.savefig('temp_frames/scene_09_gender.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_05e_gender.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_10():
-    fig = create_base_canvas(10, "Worksheets 5 & 6: Stress vs Anxiety and Depression")
+def render_chap_05f_anxiety_depression():
+    fig = create_base_canvas(5, "Worksheets 5 & 6: Stress vs Anxiety and Depression")
     
-    # Dual bar charts
     ax1 = fig.add_axes([0.08, 0.18, 0.40, 0.62])
     ax2 = fig.add_axes([0.54, 0.18, 0.40, 0.62])
     
@@ -441,13 +434,12 @@ def render_scene_10():
     ax2.set_ylabel("Average Depression Score", fontsize=11, weight='bold')
     ax2.grid(axis='y', linestyle='--', alpha=0.5)
     
-    plt.savefig('temp_frames/scene_10_anxiety_depression.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_05f_anxiety_depression.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_11():
-    fig = create_base_canvas(11, "Worksheets 7 & 8: Therapy Efficacy & History Prevalence")
+def render_chap_05g_therapy_history():
+    fig = create_base_canvas(5, "Worksheets 7 & 8: Therapy Efficacy & History Prevalence")
     
-    # Left: Therapy Efficacy (Horiz bar)
     ax1 = fig.add_axes([0.08, 0.18, 0.44, 0.62])
     t_means = df.groupby('Therapy Type')['Progress Score'].mean().sort_values(ascending=True)
     bars = ax1.barh(t_means.index, t_means.values, color='#0F766E', edgecolor='#134E4A', height=0.55)
@@ -459,18 +451,56 @@ def render_scene_11():
     ax1.set_title("Worksheet 7: Ranked Therapy Efficacy", fontsize=12, weight='bold', color='#0F172A')
     ax1.grid(axis='x', linestyle='--', alpha=0.5)
     
-    # Right: Pie chart Mental health history
     ax2 = fig.add_axes([0.58, 0.18, 0.36, 0.62])
     h_counts = df['Mental Health History'].value_counts()
     ax2.pie(h_counts, labels=[f"No History\n{h_counts['No']} (60%)", f"Family / Personal History\n{h_counts['Yes']} (40%)"],
             autopct='%1.1f%%', colors=['#38BDF8', '#F59E0B'], startangle=90, textprops={'fontsize': 11, 'weight': 'bold'})
     ax2.set_title("Worksheet 8: Prior Mental Health History", fontsize=12, weight='bold', color='#0F172A')
     
-    plt.savefig('temp_frames/scene_11_therapy_prevalence.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_05g_therapy_history.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_12():
-    fig = create_base_canvas(12, "Empirical Findings & Interpretation")
+def render_chap_05h_filters():
+    fig = create_base_canvas(5, "Tableau Public: Dynamic Interactive Cross-Filtering")
+    
+    # Left: Authentic Tableau Public Dashboard Screenshot
+    tab_shot_path = 'docs/tableau_capture.png'
+    if os.path.exists(tab_shot_path):
+        img = Image.open(tab_shot_path)
+        ax_img = fig.add_axes([0.06, 0.14, 0.58, 0.68])
+        ax_img.imshow(img)
+        ax_img.axis('off')
+        rect_border = patches.Rectangle((0, 0), 1, 1, fill=False, edgecolor='#CBD5E1', linewidth=1.5, transform=ax_img.transAxes)
+        ax_img.add_patch(rect_border)
+    else:
+        ax_img = fig.add_axes([0.06, 0.14, 0.58, 0.68])
+        ax_img.axis('off')
+        ax_img.text(0.5, 0.5, "Tableau Interactive View", ha='center', va='center', fontsize=16)
+        
+    # Right: Cross-filter interactive controls callout
+    ax_info = fig.add_axes([0.66, 0.14, 0.28, 0.68])
+    ax_info.axis('off')
+    
+    ax_info.text(0, 0.95, "Interactive BI Capabilities", fontsize=14, weight='bold', color='#0F172A', transform=ax_info.transAxes)
+    
+    filter_features = [
+        ("Dynamic Cross-Filtering", "Selecting 'High Stress' immediately isolates the 49 critical students across all connected worksheets."),
+        ("Multi-Dimensional Slicing", "Simultaneously filter by Gender, Age Cohorts, or Sleep Quality for precision cohort analysis."),
+        ("Real-Time KPI Updates", "Executive metrics dynamically recalculate to display localized averages for selected sub-groups."),
+        ("Advisor Decision Support", "Enables academic mentors to identify high-risk students and plan targeted interventions.")
+    ]
+    
+    y = 0.82
+    for title, desc in filter_features:
+        ax_info.text(0.02, y, f"⚡ {title}", fontsize=11, weight='bold', color='#0F766E', transform=ax_info.transAxes)
+        ax_info.text(0.02, y - 0.05, desc, fontsize=9.5, color='#475569', transform=ax_info.transAxes, linespacing=1.3)
+        y -= 0.19
+        
+    plt.savefig('temp_frames/chap_05h_filters.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.close()
+
+def render_chap_06_findings():
+    fig = create_base_canvas(6, "Empirical Findings & Interpretation")
     ax = fig.add_axes([0.08, 0.14, 0.84, 0.68])
     ax.axis('off')
     
@@ -495,25 +525,25 @@ def render_scene_12():
         ax.text(0.06, y - 0.15, desc, fontsize=11.5, color='#334155', transform=ax.transAxes, linespacing=1.4)
         y -= 0.30
         
-    plt.savefig('temp_frames/scene_12_findings.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_06_findings.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_13():
-    # Capture or load actual screenshot of the website
-    fig = create_base_canvas(13, "Portfolio Website & Public Deployment")
+def render_chap_07_website():
+    fig = create_base_canvas(7, "Portfolio Website & Public Deployment")
     
-    # Load captured website screenshot if available
-    if os.path.exists('temp_website_shot.png'):
-        img = Image.open('temp_website_shot.png')
+    web_shot_path = 'docs/live_site_capture.png'
+    if os.path.exists(web_shot_path):
+        img = Image.open(web_shot_path)
         ax_img = fig.add_axes([0.06, 0.14, 0.58, 0.68])
         ax_img.imshow(img)
         ax_img.axis('off')
+        rect_border = patches.Rectangle((0, 0), 1, 1, fill=False, edgecolor='#CBD5E1', linewidth=1.5, transform=ax_img.transAxes)
+        ax_img.add_patch(rect_border)
     else:
         ax_img = fig.add_axes([0.06, 0.14, 0.58, 0.68])
         ax_img.axis('off')
         ax_img.text(0.5, 0.5, "Live Website Preview", ha='center', va='center', fontsize=16)
         
-    # Right panel: Features
     ax_info = fig.add_axes([0.66, 0.14, 0.28, 0.68])
     ax_info.axis('off')
     
@@ -533,10 +563,10 @@ def render_scene_13():
         ax_info.text(0.02, y - 0.06, f_desc, fontsize=9.5, color='#475569', transform=ax_info.transAxes)
         y -= 0.16
         
-    plt.savefig('temp_frames/scene_13_website.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_07_website.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
-def render_scene_14():
+def render_chap_08_conclusion():
     fig = plt.figure(figsize=(12.8, 7.2), dpi=100)
     fig.patch.set_facecolor('#0B1329')
     ax = fig.add_axes([0, 0, 1, 1])
@@ -557,29 +587,29 @@ def render_scene_14():
         "  Tableau Dashboard: https://public.tableau.com/views/Student_Mental_Health_Analysis...  "
     )
     ax.text(0.5, 0.32, links_text, color='#E2E8F0', fontsize=12, ha='center', bbox=box_props, linespacing=1.6, fontfamily='monospace')
-    
     ax.text(0.5, 0.12, "© 2026 Parth Pawar • SkillWallet / SmartBridge Data Analytics Program", color='#64748B', fontsize=12, ha='center')
     
-    plt.savefig('temp_frames/scene_14_conclusion.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
+    plt.savefig('temp_frames/chap_08_conclusion.png', facecolor=fig.get_facecolor(), bbox_inches='tight', pad_inches=0)
     plt.close()
 
 def render_all_frames():
-    print("Rendering 14 high-resolution 1280x720 video frames...")
-    render_scene_01()
-    render_scene_02()
-    render_scene_03()
-    render_scene_04()
-    render_scene_05()
-    render_scene_06()
-    render_scene_07()
-    render_scene_08()
-    render_scene_09()
-    render_scene_10()
-    render_scene_11()
-    render_scene_12()
-    render_scene_13()
-    render_scene_14()
-    print("All 14 frames rendered successfully!")
+    print("Rendering 15 high-resolution 1280x720 video frames matching all 15 storyboard segments...")
+    render_chap_01_intro()
+    render_chap_02_problem()
+    render_chap_03_dataset()
+    render_chap_04_methodology()
+    render_chap_05a_kpi()
+    render_chap_05b_stress_dist()
+    render_chap_05c_screen_time()
+    render_chap_05d_sleep_quality()
+    render_chap_05e_gender()
+    render_chap_05f_anxiety_depression()
+    render_chap_05g_therapy_history()
+    render_chap_05h_filters()
+    render_chap_06_findings()
+    render_chap_07_website()
+    render_chap_08_conclusion()
+    print("All 15 frames rendered successfully!")
 
 def build_video():
     render_all_frames()
@@ -593,7 +623,6 @@ def build_video():
             clip_path = f"temp_clips/{sec_id}.mp4"
             
             print(f"Encoding clip for {sec_id} ({dur:.2f}s)...")
-            # Create video clip with exact frame rate and duration
             cmd = [
                 'ffmpeg', '-y', '-loop', '1', '-i', img_path,
                 '-c:v', 'libx264', '-t', str(dur),

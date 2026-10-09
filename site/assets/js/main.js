@@ -87,6 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Video Chapter Quick-Jump Navigation
+  const videoPlayer = document.querySelector('.video-player');
+  const chapterPills = document.querySelectorAll('.chapter-pill');
+  if (videoPlayer && chapterPills.length > 0) {
+    chapterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const targetSeconds = parseFloat(pill.getAttribute('data-time'));
+        if (!isNaN(targetSeconds)) {
+          videoPlayer.currentTime = targetSeconds;
+          videoPlayer.play().catch(() => {});
+        }
+      });
+    });
+  }
+
   // Load summary statistics log
   fetch('assets/data/summary.json')
     .then(res => res.json())
@@ -99,3 +114,4 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Local summary data fallback active.');
     });
 });
+

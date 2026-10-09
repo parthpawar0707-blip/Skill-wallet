@@ -4,76 +4,81 @@
 **Presenter:** Parth Pawar  
 **Voice Engine:** Microsoft Edge Neural Speech Synthesizer (`edge-tts`)  
 **Voice Model:** `en-IN-PrabhatNeural` (Natural Indian English Male)  
-**Tuning:** `rate="+20%"`, `pitch="-5Hz"` (Acoustic warmth, relaxed sentence cadence, no high-pitch or female distortion)  
-**Final Duration:** 375.05 Seconds (06:15.05 — exactly within the 5:45 to 6:30 target window)  
-**Captions:** Synchronized SubRip (`.srt`) and WebVTT (`.vtt`) files available  
+**Tuning:** `rate="+22%"`, `pitch="-5Hz"` (Acoustic warmth, relaxed collegiate cadence, zero high-pitch distortion)  
+**Final Duration:** 401.97 Seconds (06:41.97 — strictly within the 5:00 to 7:00 minute requirement)  
+**Captions:** Synchronized SubRip (`.srt`) and WebVTT (`.vtt`) files generated  
 
 ---
 
-### Scene 1: Introduction & Welcome (00:00 – 00:23)
-*Hello everyone! My name is Parth Pawar, and welcome to the project walkthrough of Analysing Mental Health in Student Ecosystem. In modern higher education, undergraduates navigate heavy academic pressures, irregular sleep, and prolonged screen exposure. Today, I'll walk you through our verified dataset, Tableau Public dashboard, and key analytical takeaways.*
+### Chapter 1: Introduction & Welcome (00:00 – 00:25)
+*Hello everyone! My name is Parth Pawar, and welcome to this complete walkthrough of Analysing Mental Health in Student Ecosystem. Today, undergraduates navigate heavy academic pressures, irregular sleep schedules, and prolonged screen exposure. In this walkthrough, I will guide you through our verified dataset, our interactive Tableau Public dashboard, and the empirical takeaways that emerge from the data.*
 
 ---
 
-### Scene 2: Problem Statement & Objectives (00:23 – 00:49)
-*Collegiate mental health is often discussed subjectively or addressed only reactively after severe distress. Well-being is closely tied to daily lifestyle factors like screen time, sleep quality, and support systems. Our goal is to build an interactive Tableau decision-support dashboard that uncovers empirical patterns across student lifestyles, helping academic institutions offer proactive, timely support.*
+### Chapter 2: Problem Statement & Objectives (00:25 – 00:51)
+*Collegiate mental health is frequently addressed only reactively after severe distress. However, well-being is intricately connected to daily lifestyle patterns like screen time, sleep quality, and support systems. Our objective is building an interactive Tableau decision-support dashboard that reveals empirical patterns across student lifestyles and clinical scores, empowering mentors and counselors to offer timely, proactive support.*
 
 ---
 
-### Scene 3: Dataset Architecture & Source (00:49 – 01:16)
-*Our verified dataset contains exactly 200 student records across 18 multi-dimensional behavioral and academic variables. Each student is tracked from STU 0001 to STU 0200. Attributes include age, gender, clinical Anxiety and Depression scores from 0 to 100, categorical Stress Levels, daily screen time, sleep quality, and therapy pathways including CBT and Counseling.*
+### Chapter 3: Dataset Architecture & Source (00:51 – 01:24)
+*Our verified dataset contains exactly 200 student records across 18 multi-dimensional behavioral, clinical, and academic variables, tracked from STU 0001 to STU 0200. Demographics capture age 18 to 25 and gender cohorts. Clinical scales measure Anxiety and Depression from 0 to 100, alongside categorical Stress Levels. Lifestyle telemetry tracks daily screen time in hours, sleep quality, physical activity, and therapeutic pathways like CBT and Counseling.*
 
 ---
 
-### Scene 4: Data Preparation & Calculations (01:16 – 01:40)
-*Using Python and Pandas, we confirmed 100 percent data completeness with zero null values and zero duplicates. In Tableau Desktop, we engineered two vital calculated fields: First, Active Therapy, isolating students receiving structured care. Second, High Stress and Poor Sleep, flagging students suffering concurrently from acute stress and severe sleep disruption.*
+### Chapter 4: Methodology & Calculations (01:24 – 01:51)
+*Using Python and Pandas, we verified zero null values and zero duplicates across all records. In Tableau Desktop, we engineered two vital calculated fields: First, Active Therapy, defined as: IF Therapy Type does not equal No Therapy THEN 1 ELSE 0 END, isolating students in institutional care. Second, High Stress and Poor Sleep, flagging students suffering concurrently from acute stress and severe sleep disruption.*
 
 ---
 
-### Scene 5: Executive KPI Ribbon (01:40 – 02:11)
-*Transitioning to our live Tableau dashboard, the executive KPI ribbon establishes four cohort benchmarks across all 200 students: Total Students: exactly 200 undergraduates. Average Anxiety Score: 52.59 out of 100. Average Depression Score: 48.09 out of 100. And Average Daily Screen Time: 7.10 hours per day. These benchmarks ground our subsequent visual analysis.*
+### Chapter 5A: Tableau Walkthrough: Executive KPI Ribbon (01:51 – 02:20)
+*On our live Tableau Public dashboard, the executive KPI ribbon establishes four cohort benchmarks across all 200 students: Total Students: exactly 200 undergraduates. Average Anxiety Score: 52.59 out of 100. Average Depression Score: 48.09 out of 100. And Average Daily Screen Time: 7.10 hours per day. These metrics ground our entire visual analysis.*
 
 ---
 
-### Scene 6: Worksheet 1: Stress Level Distribution (02:11 – 02:39)
-*Worksheet one examines the Stress Level Distribution across the cohort. 107 students, or 53.5 percent, experience Medium stress. 49 students, or 24.5 percent, experience High stress, while 44 students, or 22 percent, report Low stress. Combined, over 78 percent of surveyed students operate under moderate to severe stress, proving this is a widespread campus challenge.*
+### Chapter 5B: Tableau Walkthrough: Stress Level Distribution (02:20 – 02:49)
+*Worksheet one examines Stress Level Distribution across the cohort. 107 students, or 53.5 percent, experience Medium stress. 49 students, or 24.5 percent, experience High stress, while 44 students, or 22 percent, report Low stress. Combined, over 78 percent of surveyed students operate under moderate to severe stress, proving this is a widespread campus challenge.*
 
 ---
 
-### Scene 7: Worksheet 2: Screen Time vs Stress Level (02:39 – 03:06)
-*Worksheet two evaluates daily screen time against reported stress levels. A distinct upward trend emerges: students with Low stress average 6.00 hours of screen time. Medium stress students average 7.07 hours, while High stress students surge to 8.12 hours daily. High stress students spend over two additional hours on screens each day, highlighting digital fatigue.*
+### Chapter 5C: Tableau Walkthrough: Screen Time vs Stress (02:49 – 03:15)
+*Worksheet two evaluates daily screen time against reported stress levels. A distinct upward trend emerges: students with Low stress average 6.00 hours of screen time. Medium stress students average 7.07 hours, while High stress students surge to 8.12 hours daily. High-stress students spend over two additional hours on screens each day, highlighting digital fatigue.*
 
 ---
 
-### Scene 8: Worksheet 3: Sleep Quality vs Stress Level (03:06 – 03:31)
-*Worksheet three explores Sleep Quality against Stress Level. Among students reporting Poor sleep, 35 out of 66 suffer from High stress, 30 report Medium stress, and only one maintains Low stress. Conversely, among students with Good sleep quality, 22 report Low stress and only two report High stress. This confirms sleep quality as a vital resilience buffer.*
+### Chapter 5D: Tableau Walkthrough: Sleep Quality vs Stress (03:15 – 03:39)
+*Worksheet three explores Sleep Quality against Stress Level. Among students reporting Poor sleep, 35 out of 66 suffer from High stress, 30 report Medium stress, and only one maintains Low stress. Conversely, among students with Good sleep, 22 report Low stress and only two report High stress. This confirms sleep quality as a vital resilience buffer.*
 
 ---
 
-### Scene 9: Worksheet 4: Gender Mental Health Comparison (03:31 – 04:04)
-*Worksheet four benchmarks anxiety and depression across gender cohorts. Average anxiety remains evenly distributed: 53.32 for females, 51.76 for males, and 53.50 for other cohorts. Depression scores follow a similar pattern: 48.10 for females, 47.88 for males, and 50.38 for others. This proves psychological strain is evenly shared across demographics, making lifestyle factors the key drivers.*
+### Chapter 5E: Tableau Walkthrough: Gender Mental Health Comparison (03:39 – 04:12)
+*Worksheet four benchmarks mental health across gender cohorts. Average anxiety remains evenly distributed: 53.32 for females, 51.76 for males, and 53.50 for other cohorts. Depression scores follow a similar pattern: 48.10 for females, 47.88 for males, and 50.38 for others. This statistical parity shows psychological strain is evenly shared across demographics, making lifestyle factors the primary differentiators.*
 
 ---
 
-### Scene 10: Worksheets 5 & 6: Stress vs Anxiety and Depression (04:04 – 04:33)
-*Worksheets five and six analyze how stress escalates into clinical symptoms. Anxiety scores rise steeply from 30.27 in Low stress, to 52.85 in Medium stress, reaching 72.06 in High stress. Similarly, depression scores escalate from 26.80 in Low stress to 68.78 in High stress, over two and a half times higher. Chronic stress reliably compounds into acute distress.*
+### Chapter 5F: Tableau Walkthrough: Stress vs Symptoms Escalation (04:12 – 04:41)
+*Worksheets five and six analyze how stress escalates into clinical symptoms. Anxiety scores rise steeply from 30.27 in Low stress, to 52.85 in Medium stress, reaching 72.06 in High stress. Similarly, depression scores escalate from 26.80 in Low stress to 68.78 in High stress—over two and a half times higher. Chronic stress reliably compounds into acute distress.*
 
 ---
 
-### Scene 11: Worksheets 7 & 8: Therapy Efficacy and History Prevalence (04:33 – 05:01)
-*Worksheets seven and eight evaluate support modalities and mental health history. In Ranked Therapy Efficacy, Cognitive Behavioral Therapy leads with an average progress score of 40.80, followed by Counseling at 34.43 and Support Groups at 33.10. Meanwhile, exactly 40 percent of students, or 80 out of 200, report prior mental health history, urging early proactive screening.*
+### Chapter 5G: Tableau Walkthrough: Therapy Efficacy & History Prevalence (04:41 – 05:08)
+*Worksheets seven and eight evaluate support modalities and history. In Ranked Therapy Efficacy, Cognitive Behavioral Therapy leads with an average progress score of 40.80, followed by Counseling at 34.43 and Support Groups at 33.10. Meanwhile, exactly 40 percent of students, or 80 out of 200, report prior mental health history, underscoring the need for early screening.*
 
 ---
 
-### Scene 12: Core Empirical Findings & Interpretation (05:01 – 05:29)
-*Synthesizing our observations yields three primary findings: First, Sleep Quality is the Paramount Protective Buffer against high stress. Second, Daily screen time exceeding 7.5 hours strongly co-occurs with elevated stress and anxiety. Third, Structured interventions like CBT deliver proven symptom progress compared to unguided coping. These signals provide actionable guidance for student welfare initiatives.*
+### Chapter 5H: Tableau Walkthrough: Interactive Cross-Filtering (05:08 – 05:26)
+*On the published Tableau dashboard, interactive cross-filtering allows advisors to segment the cohort by stress level or sleep quality. Clicking a high-stress tier dynamically updates all connected worksheets, isolating vulnerable students and enabling targeted intervention planning in real time.*
 
 ---
 
-### Scene 13: Portfolio Website & Public Deployment (05:29 – 05:51)
-*To present this work professionally, I deployed a dedicated portfolio website on GitHub Pages featuring a modern editorial design. The site includes an Executive Hero section, an interactive Tableau embed with reload controls and fallback options, a complete Worksheet Gallery, an embedded HTML5 video player with captions, and direct links to our documentation.*
+### Chapter 6: Core Empirical Findings & Interpretation (05:26 – 05:56)
+*Synthesizing our observations yields three primary findings: First, Sleep Quality is the Paramount Protective Buffer against high stress—restorative sleep strongly shields students from distress. Second, daily screen time exceeding 7.5 hours strongly co-occurs with elevated anxiety and burnout. Third, structured interventions like CBT deliver proven symptom progress compared to unguided coping. These empirical signals offer actionable guidance for campus welfare initiatives.*
 
 ---
 
-### Scene 14: Conclusion & Final Thoughts (05:51 – 06:15)
+### Chapter 7: Portfolio Website & Public Deployment (05:56 – 06:19)
+*To present this work professionally, I deployed a dedicated portfolio website on GitHub Pages featuring a modern editorial design. The site includes an Executive Hero section, an interactive Tableau embed with reload controls and fallback options, a Worksheet Gallery, an embedded HTML5 video player with captions, and direct links to our documentation and repository.*
+
+---
+
+### Chapter 8: Conclusion & Final Thoughts (06:19 – 06:42)
 *In conclusion, Analysing Mental Health in Student Ecosystem demonstrates how Tableau transforms complex student wellness data into intuitive, actionable dashboards. All source datasets, data dictionaries, workbooks, and documentation are available on my GitHub repository. Thank you for watching! My name is Parth Pawar, and I look forward to your thoughts.*
