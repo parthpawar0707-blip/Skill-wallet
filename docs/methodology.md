@@ -1,85 +1,114 @@
 # Methodology: Student Mental Health Analytics
 
 **Project Title:** Analysing Mental Health in Student Ecosystem  
-**Author:** Parth Pawar  
+**Author / Lead Analyst:** Parth Pawar  
 **Program:** SkillWallet / SmartBridge Virtual Internship &bull; Data Analytics with Tableau  
+**Repository:** https://github.com/parthpawar0707-blip/Skill-wallet  
+**Live Site:** https://parthpawar0707-blip.github.io/Skill-wallet/  
 
 ---
 
-## The 10-Step Analytical Workflow
-
-This project adheres to a standardized, reproducible 10-step lifecycle:
+## The 10-Step Analytical Lifecycle
 
 ```
-[1. Data Acquisition] -> [2. Data Quality Audit] -> [3. Privacy & Sanitization] -> [4. Feature Engineering] -> [5. Tableau Data Source Ingestion]
-        |
-        v
-[6. Worksheet Visualization] -> [7. Dashboard & Filter Scoping] -> [8. Story Design] -> [9. Tableau Public Publishing] -> [10. Web Portfolio & CI/CD Deployment]
+[1. Data Acquisition & Provenance] -> [2. Data Quality & Hygiene Audit] -> [3. Privacy & Ethics Protocol] 
+                                                  |
+                                                  v
+[4. Feature Engineering in Tableau] <- [5. Data Extraction & Workbook Ingestion]
+         |
+         v
+[6. Worksheet Construction (8 Views)] -> [7. Dashboard Sizing & Filter Scoping] -> [8. Story Design]
+                                                                                            |
+                                                                                            v
+[9. Video Walkthrough & Audio Engineering] <- [10. Web Portfolio & CI/CD Deployment] <-------+
 ```
 
-### 1. Data Acquisition
-- Downloaded and verified the official project dataset from Google Sheets:
-  `https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing`
-- Ingested 1,000 student records across 16 multi-dimensional variables.
+---
 
-### 2. Data Quality Audit
-- Executed `scripts/analyze_dataset.py` verifying:
-  - 1,000 unique `Student_ID` keys (0 duplicate records).
-  - 0 null, empty, or undefined entries across all 16,000 cells (100% completeness).
-  - Range boundaries tested for clinical plausibility: Age (18–25), Scales (1–10), Sleep (2.8–10.4 hrs), Attendance (60–100%), and HRV (36.6–99.2 ms).
+### Step 1: Data Acquisition & Provenance
+- Source repository and Google Sheets dataset inspected:
+  `https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing` (1,000 records × 16 variables).
+- Anonymized analytical extract created for Tableau workbook modeling:
+  `data/mental_health_student_ecosystem_cleaned.csv` (200 undergraduate profiles × 18 variables).
 
-### 3. Student Privacy & Sanitization
-- Protected individual student privacy by aggregating findings and excluding raw qualitative journal entries from public web assets.
+---
 
-### 4. Feature Engineering & Calculated Fields
-1. **Age Cohort (`Age_Group`):**
+### Step 2: Data Quality & Hygiene Audit
+- Automated verification using Python (`pandas`):
+  - **Uniqueness:** 200 distinct student records (`STU_0001` through `STU_0200`).
+  - **Completeness:** Zero missing or null values across all 3,600 cells (100% data density).
+  - **Duplicate Audit:** Zero duplicate records.
+  - **Range Boundaries:** Anxiety and Depression scores validated in the `0–100` range; Daily Screen Time validated between `3.5` and `12.0` hours; Age restricted to undergraduate brackets (`18–25` years).
+
+---
+
+### Step 3: Privacy & Ethics Protocol
+- Student identification anonymized via synthetic alphanumeric tokens (`STU_xxxx`).
+- All qualitative subjective texts (such as individual emotional journals) are preserved privately and omitted from public GitHub and web assets.
+- Explicit non-clinical disclaimers integrated across all presentations and web pages.
+
+---
+
+### Step 4: Feature Engineering & Calculated Fields
+Two business logic calculated fields were engineered directly in Tableau Desktop:
+
+1. **`Active_Therapy`**:
    ```tableau
-   IF [Age] < 20 THEN "Below 20"
-   ELSEIF [Age] <= 22 THEN "20-22"
-   ELSEIF [Age] <= 25 THEN "23-25"
-   ELSE "Above 25"
-   END
+   IF [Therapy Type] != "No Therapy" THEN 1 ELSE 0 END
    ```
-2. **Study Intensity (`Study_Category`):**
+   *Rationale:* Aggregates students receiving active clinical intervention across CBT, Counseling, Support Groups, and Meditation to evaluate institutional program uptake.
+
+2. **`HighStress_PoorSleep`**:
    ```tableau
-   IF [Study_Hours_Per_Day] < 3.0 THEN "Light (<3 hrs)"
-   ELSEIF [Study_Hours_Per_Day] <= 5.5 THEN "Moderate (3-5.5 hrs)"
-   ELSE "Intensive (>5.5 hrs)"
-   END
+   IF [Stress Level] = "High" AND [Sleep Quality] = "Poor" THEN 1 ELSE 0 END
    ```
-3. **Sleep Hygiene (`Sleep_Category`):**
-   ```tableau
-   IF [Sleep_Duration_Hours] < 6.0 THEN "Deprived (<6 hrs)"
-   ELSEIF [Sleep_Duration_Hours] <= 7.5 THEN "Adequate (6-7.5 hrs)"
-   ELSE "Optimal (>7.5 hrs)"
-   END
-   ```
+   *Rationale:* Identifies compound risk vulnerability. Students concurrently experiencing poor sleep and severe stress constitute 35 of the 49 high-stress students (71.4%), marking this sub-group as the highest priority for campus wellness intervention.
 
-### 5. Tableau Data Source Ingestion
-- Connected dataset to Tableau Desktop / Public via Text connection.
-- Verified discrete dimension assignments (`Gender`, `Age_Group`, `Mental_Health_Risk`, `Intervention_Strategy`) and continuous measure assignments (`Stress_Level`, `HRV`, `Academic_Performance_Index`, `Sleep_Duration_Hours`).
+---
 
-### 6. Worksheet Visualization Design
-- Constructed 6 primary analytical worksheets answering targeted research questions:
-  - Worksheet 1: Binned Bar chart of Study Intensity vs. Academic Performance Index.
-  - Worksheet 2: Horizontal Bar chart of Gender Cohorts vs. Average Depression Level.
-  - Worksheet 3: Granular Scatter Plot of Study Hours vs. Performance with linear regression trendlines.
-  - Worksheet 4: Column Bar chart of Gender Cohorts vs. Average Stress Level.
-  - Worksheet 5: Biometric Bar chart comparing Heart Rate Variability across Risk Tiers.
-  - Worksheet 6: Proportional Donut chart illustrating Mental Health Risk Distribution.
+### Step 5: Data Extraction & Workbook Ingestion
+- Connected the cleaned CSV extract to Tableau Desktop.
+- Categorized dimensions (`User ID`, `Gender`, `Stress Level`, `Sleep Quality`, `Physical Activity Level`, `Therapy Type`, `Mental Health History`).
+- Categorized continuous measures (`Anxiety Score`, `Depression Score`, `Daily Screen Time (hrs)`, `Progress Score`, `Intervention Duration (weeks)`).
 
-### 7. Dashboard Layout & Filter Scoping
-- Sized dashboard using modern 1366×768 desktop container architecture.
-- Added executive scorecard with 7 key cohort KPI benchmarks.
-- Configured global dropdown filters (`Gender`, `Age_Group`, `Mental_Health_Risk`) set to "Apply to All Worksheets using Related Data Sources".
+---
 
-### 8. Analytical Story Design
-- Organized 3-scene narrative story guiding stakeholders from cohort baseline, to biological stress drivers, to targeted institutional interventions.
+### Step 6: Worksheet Construction (8 Core Views)
+1. **Stress Distribution:** Bar column distribution displaying Low (44), Medium (107), High (49).
+2. **Screen Time vs. Stress:** Average screen hours across stress tiers (6.00h, 7.07h, 8.12h).
+3. **Sleep Quality vs. Stress:** Cross-tabulation isolating 35 high-stress cases in the poor sleep group.
+4. **Gender Mental Health Comparison:** Multi-series bar chart evaluating anxiety and depression parity.
+5. **Stress vs. Anxiety:** Escalation bar chart mapping 30.27 (Low) to 72.06 (High).
+6. **Stress vs. Depression:** Escalation bar chart mapping 26.80 (Low) to 68.78 (High).
+7. **Therapy Efficacy:** Progress scores ranked across CBT (40.80), Counseling (34.43), Groups (33.10), Meditation (32.57).
+8. **History Prevalence:** Proportional distribution showing 40% with prior history.
 
-### 9. Publishing to Tableau Public
-- Published packaged workbook to Tableau Public cloud servers.
-- Verified live share URL and embed accessibility.
+---
 
-### 10. Web Portfolio & CI/CD Deployment
-- Built responsive static web application in `site/` with live Tableau embed, video player, and interactive summaries.
-- Configured GitHub Actions workflow (`.github/workflows/deploy.yml`) for automated static deployment to GitHub Pages.
+### Step 7: Dashboard Sizing & Filter Scoping
+- Sized dashboard using modern 1366×768 responsive canvas dimensions.
+- Integrated top-ribbon executive scorecard highlighting the 4 core benchmarks (200 Students, 52.59 Anxiety, 48.09 Depression, 7.10h Screen Time).
+- Structured worksheets into scannable analytical zones with linked filter parameters.
+
+---
+
+### Step 8: Story Design & Tableau Public Publishing
+- Sequenced analytical narrative through cohort baseline, digital lifestyle drivers, and therapeutic intervention pathways.
+- Published to Tableau Public cloud servers and verified public embed parameters (`:embed=yes&:showVizHome=no`).
+
+---
+
+### Step 9: Video Walkthrough & Audio Engineering
+- **Scripting:** Formatted 8 conversational chapters covering background, data, methodology, Tableau charts, and findings.
+- **Narration Synthesis:** Generated natural Indian English male narration using Microsoft Edge Neural TTS (`en-IN-PrabhatNeural`, calibrated at `pitch="-5Hz"` and `rate="+22%"`).
+- **Synchronization:** Edited 15 visual scenes using FFmpeg, matching spoken narration 1:1 with genuine Tableau dashboard recordings.
+- **Duration & Assets:** Final video rendered to **06:41.97** (401.97s, 9.44 MB, 1280×720 H.264/AAC), accompanied by WebVTT and SubRip subtitle tracks.
+
+---
+
+### Step 10: Web Portfolio & CI/CD Deployment
+- Built static web application in `site/` with 11 structured sections.
+- Embedded Tableau dashboard with backdrop capture preview and 7-second fallback.
+- Verified responsive layout across 1440×900, 768×1024, 390×844, and 360×800.
+- Implemented dual root and `site/` redundancy for GitHub Pages deployment compatibility.
+- Automated CI/CD deployment via GitHub Actions (`.github/workflows/deploy.yml`).

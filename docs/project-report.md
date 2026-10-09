@@ -1,114 +1,173 @@
 # Comprehensive Project Report: Analysing Mental Health in Student Ecosystem
 
 **Project Title:** Analysing Mental Health in Student Ecosystem  
-**Author:** Parth Pawar  
+**Author / Lead Analyst:** Parth Pawar  
 **Program:** SkillWallet / SmartBridge Virtual Internship &bull; Data Analytics with Tableau  
-**Domain:** Higher Education & Campus Wellness Analytics  
-**Deployment URL:** https://parthpawar0707-blip.github.io/Skill-wallet/  
-**Repository:** https://github.com/parthpawar0707-blip/Skill-wallet  
-**Tableau Public Dashboard:** [Student Mental Health Analysis](https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&publish=yes)  
+**Domain:** Higher Education, Student Telemetry & Campus Wellness Analytics  
+**Live Portfolio Website:** https://parthpawar0707-blip.github.io/Skill-wallet/  
+**GitHub Repository:** https://github.com/parthpawar0707-blip/Skill-wallet  
+**Published Tableau Public Dashboard:** [Student Mental Health Analysis](https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&publish=yes)  
+**Dataset Reference:** [Google Sheets Source](https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing)  
 
 ---
 
-## 1. Introduction
-Collegiate environments impose strenuous cognitive, social, and emotional demands on undergraduate students. Meeting demanding course deadlines, preparing for competitive examinations, managing sleep schedules, and coping with digital overload often lead to severe psychological strain. Unaddressed chronic distress diminishes student quality of life, suppresses academic achievement, and leads to university attrition.
+## 1. Executive Summary
 
-This project delivers an end-to-end data analytics and business intelligence solution to systematically analyze, visualize, and monitor mental health dynamics across a student ecosystem. By bridging demographic data, daily lifestyle habits, subjective psychological ratings, physiological telemetry (Heart Rate Variability), and academic performance metrics into an interactive Tableau dashboard and responsive portfolio website, this study provides actionable insights for proactive student support.
+Collegiate environments impose strenuous cognitive, social, and emotional demands on undergraduate students. Navigating heavy curricular deadlines, examination pressure, erratic sleep schedules, and continuous digital screen exposure frequently triggers acute psychological distress. When unmanaged, chronic distress reduces quality of life, impairs academic performance, and escalates university attrition.
 
----
-
-## 2. Problem Statement
-Historically, university counseling departments and academic advisors have operated in silos. Mental health surveys are rarely conducted dynamically, while student records and grade databases reside in separate systems. Consequently, institutional awareness of student distress typically occurs reactively—after a student has failed multiple classes, accumulated excessive absenteeism, or withdrawn entirely. There is an acute need for a unified, real-time analytical framework to visualize how everyday lifestyle choices and autonomic stress signals correlate with academic success.
+This project delivers an end-to-end data analytics and business intelligence solution to systematically analyze, model, and visualize mental health dynamics across a student ecosystem. By bridging demographic data, daily lifestyle habits, subjective psychometric ratings, and therapeutic modalities into an interactive Tableau Public dashboard and a responsive editorial web portfolio, this study provides actionable, non-clinical decision support for campus advisors, academic counselors, and university wellness committees.
 
 ---
 
-## 3. Project Objectives
-1. **Audit & Validate Multi-Dimensional Data:** Evaluate 1,000 collegiate profiles across 16 clinical, behavioral, and academic dimensions for 100% data hygiene.
-2. **Quantify Inter-Variable Dynamics:** Model how sleep duration, screen time, study habits, and social interaction correlate with stress, anxiety, and depression.
-3. **Incorporate Objective Physiological Telemetry:** Utilize Heart Rate Variability (HRV in milliseconds) as an autonomic biomarker to substantiate self-reported survey scores.
-4. **Engineer an Interactive Tableau BI Dashboard:** Develop executive KPI scorecards, multi-dimensional worksheets, and synchronized filters for dynamic slicing.
-5. **Deploy a Portfolio Web Application:** Host a portfolio website on GitHub Pages with automated GitHub Actions CI/CD and direct Tableau embed.
-6. **Produce a Full Video Walkthrough:** Record a 5–7 minute walkthrough in natural Indian English.
+## 2. Problem Statement & Research Questions
+
+Historically, university counseling departments and academic affairs offices have operated in administrative silos. Mental health surveys are conducted infrequently, while student attendance records and grade books reside in segregated databases. Consequently, institutional awareness of student distress typically occurs reactively—after a student has failed multiple classes, accumulated excessive absenteeism, or withdrawn entirely.
+
+This investigation addresses three primary research questions:
+1. **Lifestyle Telemetry Dynamics:** How strongly do daily digital habits (screen time hours) and sleep quality correlate with self-reported stress, anxiety, and depression?
+2. **Demographic Equity:** Do psychological distress indicators vary substantially across gender cohorts, or is strain uniformly distributed across modern undergraduate populations?
+3. **Intervention Efficacy:** Which institutional support pathways (e.g., Cognitive Behavioral Therapy, counseling, meditation) associate with the highest measurable progress scores?
 
 ---
 
-## 4. Dataset Description & Provenance
-The project dataset was verified directly from the project data source ([Google Spreadsheet](https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing)).
+## 3. Dataset Architecture & Provenance
 
-- **Cohort Size:** 1,000 undergraduate student records
-- **Total Variables:** 16 fields
-- **Data Completeness:** 100% (0 nulls across 16,000 cells)
-- **Primary Key Uniqueness:** Exactly 1,000 distinct `Student_ID` values
+To resolve historical discrepancies in earlier documentation, this project formally reconciles the relationship between the raw survey benchmark and the analytical extract:
 
-### Attribute Categorization
-| Category | Variables | Scale / Units | Description |
-|---|---|---|---|
-| Demographics | `Student_ID`, `Age`, `Gender` | Numeric / Categorical | Identification, Age (18–25), Gender (Male, Female, Other) |
-| Psychological | `Stress_Level`, `Anxiety_Level`, `Depression_Level` | Integer (1–10) | Standardized self-reported psychological rating scales |
-| Lifestyle | `Sleep_Duration_Hours`, `Study_Hours_Per_Day`, `Social_Interaction_Score` | Float / Integer | Daily habits and peer engagement (1–9) |
-| Academic | `Academic_Performance_Index`, `Attendance_Rate (%)`, `LMS_Activity_Score` | Percentage / Score | Academic achievement (50–100%), attendance (60–100%), LMS portal score (10–99) |
-| Biometrics | `Heart_Rate_Variability` | Float (ms) | Autonomic cardiac vagal tone / RMSSD (36.6–99.2 ms) |
-| Interventions | `Mental_Health_Risk`, `Personalized_Intervention_Strategy` | Categorical | Risk stratification (Low, Medium, High) and 8 support pathways |
+### 3.1 Raw Benchmark Source (Google Sheets)
+- **Source URL:** `https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing`
+- **Dimensions:** 1,000 student rows &times; 16 multi-dimensional variables.
+- **Attributes:** `Student_ID`, `Age`, `Gender`, `Stress_Level`, `Anxiety_Level`, `Depression_Level`, `Heart_Rate_Variability`, `Sleep_Duration_Hours`, `Attendance_Rate (%)`, `Study_Hours_Per_Day`, `LMS_Activity_Score`, `Social_Interaction_Score`, `Academic_Performance_Index`, `Emotional_Journal`, `Mental_Health_Risk`, `Personalized_Intervention_Strategy`.
+- **Privacy Notice:** Individual emotional journal text entries are strictly preserved privately and excluded from public-facing web assets to protect student privacy.
 
----
+### 3.2 Verified Tableau Public & Portfolio Extract
+- **File:** `data/mental_health_student_ecosystem_cleaned.csv` (and `summary.json`)
+- **Dimensions:** Exactly **200 student records** (`STU_0001` through `STU_0200`) across **18 cleaned variables**.
+- **Data Completeness:** 100% (0 missing or null values across all 3,600 data cells; 0 duplicate rows).
+- **Target Workbook:** Directly extracted and verified from the published Tableau workbook (`AnalysingMentalHealthinStudentEcosystem`).
 
-## 5. Data Inspection, Cleaning & Preparation
-- **Missing Value Audit:** Automated check via `scripts/analyze_dataset.py` identified zero null or empty cells.
-- **Duplicate Check:** Verified zero duplicate records.
-- **Outlier Bounds:** Numerical measures verified within plausible clinical and collegiate boundaries.
-- **Student Privacy:** Individual emotional journal entries and row-level records are preserved privately, with only aggregate metrics published to public web assets.
-
----
-
-## 6. Calculated Fields & Feature Engineering
-1. **Age Cohorts (`Age_Group`):**
-   - `Below 20`: Age < 20 (250 students, 25.0%)
-   - `20–22`: Age 20 to 22 (384 students, 38.4%)
-   - `23–25`: Age 23 to 25 (366 students, 36.6%)
-2. **Study Intensity (`Study_Category`):**
-   - `Light`: < 3.0 hrs/day
-   - `Moderate`: 3.0 to 5.5 hrs/day
-   - `Intensive`: > 5.5 hrs/day
-3. **Sleep Hygiene Category (`Sleep_Category`):**
-   - `Deprived`: < 6.0 hrs/day
-   - `Adequate`: 6.0 to 7.5 hrs/day
-   - `Optimal`: > 7.5 hrs/day
+### 3.3 Complete Schema Specification (200-Student Extract)
+| Column Name | Data Type | Value Range / Categories | Description |
+| :--- | :--- | :--- | :--- |
+| `User ID` | String | `STU_0001` to `STU_0200` | Anonymized unique student identifier |
+| `Age` | Integer | 18 – 25 years | Chronological student age |
+| `Gender` | String | Female, Male, Other | Demographic categorization |
+| `Occupation` | String | Student / Working Student | Collegiate occupational status |
+| `Stress Level` | String | Low, Medium, High | Perceived general stress tier |
+| `Anxiety Score` | Integer | 0 – 100 | Standardized generalized anxiety scale |
+| `Depression Score` | Integer | 0 – 100 | Standardized depressive symptoms score |
+| `Sleep Quality` | String | Poor, Average, Good | Qualitative sleep restoration level |
+| `Daily Screen Time (hrs)` | Float | 3.5 – 12.0 hours | Daily digital screen exposure |
+| `Physical Activity Level` | String | Low, Moderate, High | Weekly exercise and movement level |
+| `Social Interaction Score` | Integer | 1 – 10 | Peer engagement and connectedness rating |
+| `Mental Health History` | String | Yes, No | Prior personal or familial mental health history |
+| `Therapy Type` | String | CBT, Counseling, Support Group, Meditation, No Therapy | Active support modality |
+| `Intervention Duration (weeks)` | Integer | 0 – 24 weeks | Length of time enrolled in intervention |
+| `Progress Score` | Integer | 0 – 100 | Measured therapeutic improvement rating |
+| `Medication Usage` | String | Yes, No | Prescribed psychotropic medication status |
+| `Support System Strength` | String | Low, Medium, High | Self-reported family/mentor support level |
+| `Work-Life Balance Score` | Integer | 1 – 10 | Subjective equilibrium rating |
 
 ---
 
-## 7. Interactive Tableau Dashboard Architecture
-The published Tableau dashboard integrates:
-- **Executive Scorecard:** Total Students (1,000), Avg Stress (5.45), Avg Depression (5.50), Avg Sleep (6.49 hrs), Avg Attendance (79.96%), Avg Academic Index (75.12%), and Avg HRV (69.71 ms).
-- **Viz 1 (Study Hours vs Performance):** Demonstrates non-linear returns where moderate study achieves high grades without acute stress.
-- **Viz 2 & 4 (Demographic Cohort Analysis):** Highlights that mental strain is evenly distributed across gender groups, requiring systemic rather than gender-exclusive solutions.
-- **Viz 3 (Student Scatter Plot):** Displays student-level granularity with linear regression trendlines.
-- **Viz 5 (HRV Biometric Telemetry):** Demonstrates suppressed HRV (<50 ms) in severely distressed students.
-- **Viz 6 (Risk Tier Donut):** Visualizes cohort stratification: Low Risk (41.4%), Medium Risk (34.7%), and High Risk (23.9%).
+## 4. Calculated Fields & Feature Engineering
+
+Two key calculated fields were engineered in Tableau Desktop to isolate high-risk sub-cohorts:
+
+1. **`Active_Therapy`**:
+   ```tableau
+   IF [Therapy Type] != "No Therapy" THEN 1 ELSE 0 END
+   ```
+   *Purpose:* Separates students actively receiving structured care from untreated students to measure institutional service coverage.
+
+2. **`HighStress_PoorSleep`**:
+   ```tableau
+   IF [Stress Level] = "High" AND [Sleep Quality] = "Poor" THEN 1 ELSE 0 END
+   ```
+   *Purpose:* Flags students suffering concurrently from acute stress and compromised sleep quality (accounting for 35 of 49 high-stress students, or 71.4%), isolating the highest priority cohort for campus wellness outreach.
 
 ---
 
-## 8. Empirical Findings & Institutional Insights
-1. **Sleep as an Emotional Buffer:** Students achieving &ge; 7.5 hours of sleep reported average stress scores of 4.8, compared to 6.2 for students sleeping < 6.0 hours.
-2. **Diminishing Study Returns:** Beyond 5.5 hours of daily study, academic performance gains level off when anxiety exceeds 7/10.
-3. **Social Buffering:** Peer interaction scores &ge; 6 strongly correlate with reduced depression severity (avg 4.6 vs 6.1 for isolated students).
-4. **Targeted Interventions:** 23.9% of the student body requires priority counseling, validating automated screening tools.
+## 5. Verified Key Performance Indicators (KPIs)
+
+The executive KPI ribbon in the published Tableau workbook establishes four foundational benchmarks:
+- **Total Students Analyzed:** `200`
+- **Average Anxiety Score:** `52.59 / 100`
+- **Average Depression Score:** `48.09 / 100`
+- **Average Daily Screen Time:** `7.10 Hours / Day`
 
 ---
 
-## 9. Web Integration & CI/CD Deployment
-A responsive, accessible portfolio website was built using standard HTML5/CSS/JavaScript and hosted via GitHub Pages:
-- Live Tableau Public embed with reload and external launch capabilities.
-- Integrated HTML5 video player streaming the narrated demonstration video with subtitles.
-- Automated GitHub Actions deployment (`.github/workflows/deploy.yml`) publishing the `site/` directory on pushes to `main`.
+## 6. Detailed Tableau Worksheet Analysis
+
+The published Tableau dashboard integrates 8 analytical worksheets:
+
+1. **Stress Level Distribution (Column Chart):**
+   - Medium Stress: 107 students (53.5%)
+   - High Stress: 49 students (24.5%)
+   - Low Stress: 44 students (22.0%)
+   - *Insight:* Over 78% of the cohort experiences moderate to high stress, confirming stress is a systemic collegiate reality rather than an edge-case anomaly.
+
+2. **Daily Screen Time vs. Stress Level (Bar Chart):**
+   - Low Stress: 6.00 hrs/day
+   - Medium Stress: 7.07 hrs/day
+   - High Stress: 8.12 hrs/day
+   - *Insight:* A continuous upward gradient. High-stress students spend over 2 additional hours on digital screens daily compared to low-stress peers.
+
+3. **Sleep Quality vs. Stress Level (Matrix / Stacked Bars):**
+   - Poor Sleep (66 students): 35 High Stress (53.0%), 30 Medium Stress (45.5%), 1 Low Stress (1.5%).
+   - Good Sleep (45 students): 2 High Stress (4.4%), 21 Medium Stress (46.7%), 22 Low Stress (48.9%).
+   - *Insight:* Sleep quality functions as a primary protective buffer. Less than 5% of good sleepers report high stress.
+
+4. **Gender Mental Health Comparison (Multi-Series Bar Chart):**
+   - Female: Avg Anxiety = 53.32, Avg Depression = 48.10
+   - Male: Avg Anxiety = 51.76, Avg Depression = 47.88
+   - Other: Avg Anxiety = 53.50, Avg Depression = 50.38
+   - *Insight:* Negligible variance exists between gender groups. Well-being initiatives must be universal rather than demographic-exclusive.
+
+5. **Stress Level vs. Anxiety Score (Bar Chart):**
+   - Low Stress: 30.27 &rarr; Medium Stress: 52.85 &rarr; High Stress: 72.06 (+138% increase).
+
+6. **Stress Level vs. Depression Score (Bar Chart):**
+   - Low Stress: 26.80 &rarr; Medium Stress: 47.37 &rarr; High Stress: 68.78 (+156% increase).
+
+7. **Therapy Efficacy Progress (Ranked Horizontal Bar):**
+   - Cognitive Behavioral Therapy (CBT): 40.80 avg progress score
+   - Counseling: 34.43 avg progress score
+   - Support Group: 33.10 avg progress score
+   - Meditation: 32.57 avg progress score
+   - No Therapy: 0.00 progress score
+
+8. **Mental Health History Prevalence (Ring Chart):**
+   - Prior History (Yes): 80 students (40.0%)
+   - No Prior History (No): 120 students (60.0%)
 
 ---
 
-## 10. Limitations & Responsible Use
-- **Observational Nature:** Correlational patterns do not establish direct clinical causation.
-- **Educational Scope:** This project is an academic decision-support model, not an automated clinical diagnostic tool.
-- **Data Privacy:** Raw emotional journals are kept confidential to respect student privacy.
+## 7. Video Walkthrough Deliverable
+
+- **Asset Path:** [`site/assets/video/student-mental-health-demo.mp4`](file:///d:/Skill%20wallet/site/assets/video/student-mental-health-demo.mp4)
+- **Duration:** Exactly **06:41.97** (401.97 seconds, within the 5–7 minute target).
+- **Video Specs:** H.264 / AVC, 1280&times;720 HD, 30.0 fps progressive, 9.44 MB.
+- **Audio Specs:** AAC audio, 24 kHz mono, calibrated Indian English male neural voice (`en-IN-PrabhatNeural`, pitch -5Hz, rate +22%).
+- **Visuals:** 15 synchronized scenes pairing exact narration sentences with genuine Tableau dashboard recordings and live portfolio captures.
+- **Accessibility:** Synchronized SubRip (`.srt`) and WebVTT (`.vtt`) subtitle tracks with on-page chapter navigation.
 
 ---
 
-## 11. Conclusion & Future Scope
-This project demonstrates how data analytics and interactive business intelligence can transform campus surveys and physiological telemetry into actionable wellness insights. Future expansions could incorporate real-time wearable API streams, semester-long longitudinal tracking, and automated advising alerts.
+## 8. Web Portfolio Architecture & Deployment
+
+The static website is deployed via GitHub Actions and GitHub Pages:
+- **Design System:** Editorial research aesthetic with white card surfaces, slate borders, deep navy typography, and deep teal accents.
+- **Zero Emojis:** Standardized Lucide outline SVG icons throughout.
+- **Tableau Embed Resilience:** Instant backdrop capture preview (`tableau_capture.png`) with loading spinner and automatic 7-second fallback.
+- **Responsive Proof:** Verified at 1440&times;900, 768&times;1024, 390&times;844, and 360&times;800 with zero horizontal overflow.
+- **Dual Redundancy:** Root (`index.html`, `404.html`, `assets/`) and `site/` directories are kept in lockstep to support both GitHub Actions (`./site`) and direct branch (`main / root`) deployment.
+
+---
+
+## 9. Limitations & Ethical Notice
+
+- **Non-Clinical Disclaimer:** This project is an exploratory educational data analysis designed for institutional decision support. It does not constitute a clinical psychological assessment, diagnostic tool, or medical treatment recommendation.
+- **Correlation vs. Causation:** Observed relationships (e.g., higher screen time with higher stress) represent empirical correlations. Screen time may exacerbate stress, or stressed students may engage in digital avoidance.
+- **Sample Scope:** The extract reflects 200 surveyed students and should be calibrated against larger campus censuses before establishing university policy.
