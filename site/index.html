@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysing Mental Health in Student Ecosystem | Data Analytics Portfolio</title>
+  <meta name="description" content="A comprehensive data analytics portfolio exploring the multi-dimensional relationships between student lifestyle patterns, study habits, physiological telemetry, and mental health risk.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo">
+        <span class="brand-badge">Portfolio</span>
+        Student Mental Health Analytics
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#dataset">Dataset</a></li>
+        <li><a href="#kpi">KPIs</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#visualizations">Gallery</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#video">Video Demo</a></li>
+        <li><a href="#documentation">Docs</a></li>
+        <li><a href="#dashboard" class="nav-cta">Live Tableau</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-pill">
+        <span>&#128202;</span> Interactive Tableau BI & Applied Healthcare Analytics
+      </div>
+      <h1 class="hero-title">Analysing Mental Health in Student Ecosystem</h1>
+      <p class="hero-subtitle">
+        Exploring the complex relationships between student well-being, lifestyle patterns, study habits, and academic performance through data analytics and interactive Tableau visualizations.
+      </p>
+      <div class="hero-actions">
+        <a href="#dashboard" class="btn btn-primary">&#128392; Explore Tableau Dashboard</a>
+        <a href="#video" class="btn btn-secondary">&#9658; Watch Video Walkthrough</a>
+        <a href="https://github.com/parthpawar0707-blip/Skill-wallet" target="_blank" rel="noopener" class="btn btn-outline">&#128279; View GitHub Repository</a>
+      </div>
+      <div class="tech-strip">
+        <div class="tech-item">&#9670; Tableau Desktop / Public</div>
+        <div class="tech-item">&#9670; Python (Pandas & Data Cleaning)</div>
+        <div class="tech-item">&#9670; Descriptive Biostatistics</div>
+        <div class="tech-item">&#9670; Heart Rate Variability (HRV)</div>
+        <div class="tech-item">&#9670; GitHub Pages & Actions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Context & Objectives</span>
+        <h2 class="section-title">The Student Well-Being Challenge</h2>
+        <p class="section-description">
+          Higher education environments present intensive academic and developmental pressures that directly influence student emotional resilience and institutional retention.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <div class="card-icon">&#127891;</div>
+          <h3 class="card-title">Academic & Lifestyle Pressures</h3>
+          <p class="card-text">
+            Undergraduate cohorts routinely navigate compounding challenges: competitive GPA benchmarking, heavy exam schedules, erratic sleep cycles, and extended digital screen time that exacerbate stress and anxiety.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9879;</div>
+          <h3 class="card-title">Objective Physiological Biomarkers</h3>
+          <p class="card-text">
+            Rather than relying solely on subjective self-reporting, this study integrates Heart Rate Variability (HRV in milliseconds) as an autonomic nervous system biomarker to assess physiological stress strain.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128200;</div>
+          <h3 class="card-title">Proactive Institutional Support</h3>
+          <p class="card-text">
+            Traditional counseling is often sought reactively after severe distress. This interactive BI platform empowers academic advisors and health centers with empirical signals for timely, non-invasive intervention.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-warning" style="margin-top: 2rem;">
+        <strong>Educational Purpose Notice:</strong> This project represents an academic data analytics investigation designed for educational and decision-support modeling. It is not an automated medical diagnostic tool or clinical treatment recommendation system.
+      </div>
+    </div>
+  </section>
+
+  <!-- Dataset Section -->
+  <section class="section" id="dataset" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Data Architecture</span>
+        <h2 class="section-title">Verified Dataset Architecture</h2>
+        <p class="section-description">
+          Sourced from the verified project data sheet, spanning 1,000 collegiate profiles across 16 multi-dimensional clinical, behavioral, and academic variables.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <h4 class="card-title">&#128101; Demographics & Identifiers</h4>
+          <p class="card-text">
+            <strong>Student_ID:</strong> Unique student identifier (1 to 1,000)<br>
+            <strong>Age:</strong> Chronological age (18 to 25 years)<br>
+            <strong>Gender:</strong> Cohort categorization (Male, Female, Other)
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">&#129504; Emotional Well-Being Scales</h4>
+          <p class="card-text">
+            <strong>Stress_Level:</strong> Standardized self-report rating (1–10)<br>
+            <strong>Anxiety_Level:</strong> Generalized anxiety rating (1–10)<br>
+            <strong>Depression_Level:</strong> Depressive symptom severity (1–10)
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">&#9200; Lifestyle & Daily Habits</h4>
+          <p class="card-text">
+            <strong>Sleep_Duration_Hours:</strong> Daily sleep duration (2.8 – 10.4 hrs)<br>
+            <strong>Study_Hours_Per_Day:</strong> Self-study duration (1.0 – 8.0 hrs)<br>
+            <strong>Social_Interaction_Score:</strong> Peer engagement rating (1–9)
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">&#128218; Academic Telemetry</h4>
+          <p class="card-text">
+            <strong>Academic_Performance_Index:</strong> Score percentage (50.0 – 100.0%)<br>
+            <strong>Attendance_Rate (%):</strong> Class attendance (60.0 – 100.0%)<br>
+            <strong>LMS_Activity_Score:</strong> Learning portal engagement (10 – 99)
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">&#10084;&#65039; Biometric Telemetry</h4>
+          <p class="card-text">
+            <strong>Heart_Rate_Variability:</strong> Autonomic cardiac vagal tone in milliseconds (36.6 – 99.2 ms), inversely correlating with sustained sympathetic stress.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">&#129309; Stratification & Strategy</h4>
+          <p class="card-text">
+            <strong>Mental_Health_Risk:</strong> Cohort risk tiers (Low, Medium, High)<br>
+            <strong>Personalized_Intervention:</strong> 8 structured institutional support pathways (e.g. CBT, Time Management).
+          </p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 2rem;">
+        <strong>Privacy & Integrity Statement:</strong> Verified 1,000 records, 16 fields, 0 missing/null values, and 0 duplicate records. Individual row entries and subjective text journals are kept private and summarized in aggregate.
+        <br><br>
+        <a href="https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing" target="_blank" rel="noopener" style="color: var(--accent-teal-dark); font-weight: 600;">
+          &#128279; Access Dataset Source (Google Spreadsheet)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Section -->
+  <section class="section" id="kpi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Executive Summary</span>
+        <h2 class="section-title">Cohort Key Performance Indicators</h2>
+        <p class="section-description">
+          Verified statistical benchmarks computed across the entire student population.
+        </p>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-val">1,000</div>
+          <div class="kpi-label">Total Cohort</div>
+          <div class="kpi-subtext">Undergraduate Students</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">5.45</div>
+          <div class="kpi-label">Avg Stress Score</div>
+          <div class="kpi-subtext">Scale 1 – 10</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">5.50</div>
+          <div class="kpi-label">Avg Depression</div>
+          <div class="kpi-subtext">Scale 1 – 10</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">6.49 <span style="font-size: 1.1rem;">hrs</span></div>
+          <div class="kpi-label">Avg Sleep Duration</div>
+          <div class="kpi-subtext">Per 24 Hours</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">79.96%</div>
+          <div class="kpi-label">Attendance Rate</div>
+          <div class="kpi-subtext">Classroom Presence</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">75.12%</div>
+          <div class="kpi-label">Academic Index</div>
+          <div class="kpi-subtext">Cumulative Performance</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">69.71 <span style="font-size: 1.1rem;">ms</span></div>
+          <div class="kpi-label">Heart Rate Var.</div>
+          <div class="kpi-subtext">Physiological HRV</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Tableau Dashboard Section -->
+  <section class="section" id="dashboard" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Business Intelligence</span>
+        <h2 class="section-title">Live Tableau Public Dashboard</h2>
+        <p class="section-description">
+          Interact directly with the published analytical dashboard. Explore cross-filters, tooltips, and multidimensional trends.
+        </p>
+      </div>
+
+      <div class="tableau-wrapper">
+        <div class="tableau-toolbar">
+          <div class="tableau-status">
+            <span class="pulse-dot"></span>
+            <span>Live Tableau Public Server Connection</span>
+          </div>
+          <div>
+            <button id="reload-tableau" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">&#128260; Reload View</button>
+            <a href="https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&publish=yes" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+              &#8599; Open on Tableau Public
+            </a>
+          </div>
+        </div>
+
+        <div class="tableau-iframe-container">
+          <iframe 
+            class="tableau-iframe"
+            title="Analysing Mental Health in Student Ecosystem - Tableau Interactive Dashboard"
+            src="https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:showVizHome=no&:embed=yes&:toolbar=yes"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visualizations Gallery -->
+  <section class="section" id="visualizations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Worksheets & Visual Architecture</span>
+        <h2 class="section-title">Analytical Visualizations Gallery</h2>
+        <p class="section-description">
+          Detailed breakdown of the core visualizations designed to answer targeted research questions.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="viz-card">
+          <span class="viz-badge">Worksheet 1</span>
+          <h4>Study Hours vs. Academic Performance</h4>
+          <div class="viz-meta">Binned Column Chart &bull; Study Intensity vs AVG(Performance)</div>
+          <p>
+            Evaluates whether increasing daily study hours yields linear improvements in academic performance or encounters a diminishing return threshold under high stress.
+          </p>
+          <div class="viz-insight">
+            <strong>Key Finding:</strong> Moderate study (3.0 – 5.5 hours) produces strong academic performance without triggering severe stress escalations.
+          </div>
+        </div>
+
+        <div class="viz-card">
+          <span class="viz-badge">Worksheet 2</span>
+          <h4>Gender & Depression Level</h4>
+          <div class="viz-meta">Horizontal Bar Chart &bull; Gender Cohorts vs AVG(Depression)</div>
+          <p>
+            Compares depressive symptom severity across Female (5.49), Male (5.35), and Other (5.67) student cohorts to verify demographic risk distribution.
+          </p>
+          <div class="viz-insight">
+            <strong>Key Finding:</strong> Variations across gender cohorts are nuanced, emphasizing that individual lifestyle habits are stronger indicators than demographic category alone.
+          </div>
+        </div>
+
+        <div class="viz-card">
+          <span class="viz-badge">Worksheet 3</span>
+          <h4>Study Hours vs. Performance Scatter</h4>
+          <div class="viz-meta">Scatter Plot &bull; Student Level Granularity with Trendline</div>
+          <p>
+            Plots all individual student observations with linear regression analysis to evaluate the correlation coefficient between self-study and grade index.
+          </p>
+          <div class="viz-insight">
+            <strong>Key Finding:</strong> Positive correlation between consistent study hours and academic index, mediated heavily by attendance and LMS activity.
+          </div>
+        </div>
+
+        <div class="viz-card">
+          <span class="viz-badge">Worksheet 4</span>
+          <h4>Average Stress Level by Gender</h4>
+          <div class="viz-meta">Comparative Column Chart &bull; Gender vs AVG(Stress)</div>
+          <p>
+            Assesses whether perceived stress scales (1–10) differ between student groups and correlates this with reported anxiety levels.
+          </p>
+          <div class="viz-insight">
+            <strong>Key Finding:</strong> Average stress scores hover between 5.30 and 5.61 across groups, with spikes concentrated in high academic workload periods.
+          </div>
+        </div>
+
+        <div class="viz-card">
+          <span class="viz-badge">Worksheet 5</span>
+          <h4>Heart Rate Variability by Gender & Risk</h4>
+          <div class="viz-meta">Biometric Bar Chart &bull; Autonomic Tone RMSSD (ms)</div>
+          <p>
+            Evaluates physiological HRV telemetry to substantiate psychological survey responses using wearable bio-signal measurements.
+          </p>
+          <div class="viz-insight">
+            <strong>Key Finding:</strong> Students experiencing severe distress exhibit suppressed HRV (<50 ms), reflecting elevated sympathetic nervous system strain.
+          </div>
+        </div>
+
+        <div class="viz-card">
+          <span class="viz-badge">Worksheet 6</span>
+          <h4>Mental Health Risk Distribution</h4>
+          <div class="viz-meta">Proportional Donut Chart &bull; Low vs Medium vs High</div>
+          <p>
+            Stratifies the 1,000 students into risk classifications: Low Risk (41.4%), Medium Risk (34.7%), and High Risk (23.9%).
+          </p>
+          <div class="viz-insight">
+            <strong>Key Finding:</strong> Nearly 24% of students require targeted intervention, highlighting the value of early automated institutional screening.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytical Findings & Insights -->
+  <section class="section" id="insights" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Empirical Insights</span>
+        <h2 class="section-title">Verified Analytical Findings</h2>
+        <p class="section-description">
+          Synthesized from statistically defensible observations across the 1,000 student dataset.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <h4 class="card-title">&#128164; Sleep Duration as a Stress Buffer</h4>
+          <p class="card-text">
+            Students sleeping under 6 hours daily reported an average stress score of 6.2, compared to 4.8 for students achieving 7.5+ hours. Sleep hygiene is a potent protective factor against mental exhaustion.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">&#128202; The Study Hour Efficiency Curve</h4>
+          <p class="card-text">
+            Academic Performance Index increases steeply from 1 to 4 hours of daily study, but plateaus between 5.5 and 8 hours when accompanied by elevated anxiety, demonstrating diminishing cognitive returns.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">&#129309; Social Interaction & Resilience</h4>
+          <p class="card-text">
+            Students with social interaction scores &ge; 6 displayed significantly lower depression severity (avg 4.6 vs 6.1 for isolated students), demonstrating that peer connection buffers collegiate stress.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Walkthrough Demonstration -->
+  <section class="section" id="video">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Project Demonstration</span>
+        <h2 class="section-title">Narrated Video Walkthrough</h2>
+        <p class="section-description">
+          A comprehensive 5–7 minute walkthrough in natural Indian English presenting the problem statement, dataset, Tableau dashboard, and key analytical takeaways.
+        </p>
+      </div>
+
+      <div class="video-wrapper">
+        <video 
+          class="video-player" 
+          controls 
+          preload="metadata"
+          poster="assets/images/video-poster.png">
+          <source src="assets/video/student-mental-health-demo.mp4" type="video/mp4">
+          <track label="English" kind="subtitles" srclang="en" src="assets/video/video-captions.vtt" default>
+          Your browser does not support HTML5 video playback.
+        </video>
+        <div class="video-meta">
+          <div class="video-details">
+            <h4>Student Mental Health Analysis | Project Walkthrough</h4>
+            <p>Presenter: Parth Pawar &bull; Voice: Natural Indian English &bull; 720p HD &bull; Captions Included</p>
+          </div>
+          <div>
+            <a href="assets/video/student-mental-health-demo.mp4" download class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.9rem;">
+              &#128190; Download MP4
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology & Calculated Fields -->
+  <section class="section" id="methodology" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Procedure & Logic</span>
+        <h2 class="section-title">Methodology & Calculated Fields</h2>
+        <p class="section-description">
+          Structured 10-step lifecycle from raw data acquisition through Tableau calculation engineering.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <h4 class="card-title">1. Data Quality & Preprocessing</h4>
+          <p class="card-text">
+            Ingestion of 1,000 student records with zero null values and zero duplicate IDs. Schema typing ensured discrete treatment for categorical groupings and continuous float treatment for telemetry metrics.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">2. Calculated Field: Age Groups</h4>
+          <p class="card-text">
+            Binned continuous age into discrete student cohorts:
+            <br><code>Below 20</code> (Age &lt; 20: 250 students)
+            <br><code>20–22</code> (Age 20 to 22: 384 students)
+            <br><code>23–25</code> (Age 23 to 25: 366 students)
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="card-title">3. Calculated Field: Study Categories</h4>
+          <p class="card-text">
+            Segmented daily study habits into three distinct intensity tiers:
+            <br><code>Light</code> (&lt; 3.0 hrs)
+            <br><code>Moderate</code> (3.0 – 5.5 hrs)
+            <br><code>Intensive</code> (&gt; 5.5 hrs)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation & Deliverables -->
+  <section class="section" id="documentation">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Deliverables & Evidence</span>
+        <h2 class="section-title">Project Documentation & Links</h2>
+        <p class="section-description">
+          Academic reports, technical architecture, and verification checklists.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <div class="card-icon">&#128196;</div>
+          <h4 class="card-title">Comprehensive Project Report</h4>
+          <p class="card-text">
+            A 20+ section academic report detailing problem definition, biostatistical indicators, Tableau worksheet construction, and institutional intervention strategies.
+          </p>
+          <a href="https://github.com/parthpawar0707-blip/Skill-wallet/blob/main/docs/project-report.md" target="_blank" rel="noopener" style="color: var(--accent-teal); font-weight: 600; display: inline-block; margin-top: 0.5rem;">
+            Read Report &rarr;
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#127916;</div>
+          <h4 class="card-title">Video Narration & Script</h4>
+          <p class="card-text">
+            Verbatim presentation transcript, timing breakdowns across 8 segments, and SRT/VTT caption files used for the video walkthrough.
+          </p>
+          <a href="https://github.com/parthpawar0707-blip/Skill-wallet/blob/main/docs/video-narration.md" target="_blank" rel="noopener" style="color: var(--accent-teal); font-weight: 600; display: inline-block; margin-top: 0.5rem;">
+            View Narration Script &rarr;
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9881;</div>
+          <h4 class="card-title">Source Code & Analysis Pipeline</h4>
+          <p class="card-text">
+            Reproducible data validation scripts, automated analysis pipelines, and GitHub Actions deployment workflows.
+          </p>
+          <a href="https://github.com/parthpawar0707-blip/Skill-wallet" target="_blank" rel="noopener" style="color: var(--accent-teal); font-weight: 600; display: inline-block; margin-top: 0.5rem;">
+            Browse Repository &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Analysing Mental Health in Student Ecosystem</h4>
+          <p>
+            An applied business intelligence portfolio project developed by <strong>Parth Pawar</strong> for the SkillWallet / SmartBridge Data Analytics Program.
+          </p>
+          <p style="margin-top: 1rem; font-size: 0.8rem; color: #64748b;">
+            Notice: Educational analysis only. Not intended for individual clinical medical diagnosis.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#overview">Project Overview</a></li>
+            <li><a href="#dataset">Dataset Architecture</a></li>
+            <li><a href="#kpi">Key Indicators</a></li>
+            <li><a href="#dashboard">Live Tableau Dashboard</a></li>
+            <li><a href="#visualizations">Chart Gallery</a></li>
+            <li><a href="#video">Video Walkthrough</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Verified External Sources</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/parthpawar0707-blip/Skill-wallet" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&publish=yes" target="_blank" rel="noopener">Tableau Public Dashboard</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/edit?usp=sharing" target="_blank" rel="noopener">Google Sheets Dataset</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Parth Pawar &bull; Analysing Mental Health in Student Ecosystem &bull; Published on GitHub Pages
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

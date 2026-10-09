@@ -1,0 +1,131 @@
+{
+  "project": "Analysing Mental Health in Student Ecosystem",
+  "dataset_metadata": {
+    "source": "Google Sheets (Verified Internship Deliverable Dataset)",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DSnFv7DdV8l1nBcQ-KNIrbgnmDMIDeh7/export?format=csv",
+    "rows": 1000,
+    "columns": 16,
+    "unique_student_ids": 1000,
+    "duplicates": 0,
+    "null_values_count": 0,
+    "privacy_notice": "Student emotional journal entries and individual row records are aggregated for student privacy."
+  },
+  "kpis": {
+    "total_students": 1000,
+    "avg_stress_level": 5.45,
+    "avg_depression_level": 5.5,
+    "avg_anxiety_level": 5.4,
+    "avg_sleep_hours": 6.49,
+    "avg_attendance_rate": 79.96,
+    "avg_study_hours": 4.61,
+    "avg_academic_performance_index": 75.12,
+    "avg_heart_rate_variability": 69.71,
+    "avg_lms_activity": 54.54,
+    "avg_social_interaction": 4.96
+  },
+  "distributions": {
+    "gender": {
+      "Male": 341,
+      "Female": 331,
+      "Other": 328
+    },
+    "mental_health_risk": {
+      "Low": 414,
+      "Medium": 347,
+      "High": 239
+    },
+    "age_groups": {
+      "20-22": 384,
+      "23-25": 366,
+      "Below 20": 250
+    },
+    "interventions": {
+      "Time Management Coaching": 151,
+      "Physical Activity and Wellness Program": 136,
+      "Cognitive Behavioral Therapy Recommendation": 132,
+      "Academic Counseling Support": 129,
+      "Peer Support and Group Therapy": 125,
+      "Relaxation and Breathing Exercises": 119,
+      "Mindfulness-Based Stress Reduction": 106,
+      "Sleep Hygiene Improvement Plan": 102
+    }
+  },
+  "gender_breakdown": {
+    "Female": {
+      "count": 331,
+      "avg_stress": 5.3,
+      "avg_depression": 5.49,
+      "avg_anxiety": 5.46,
+      "avg_hrv": 70.12,
+      "avg_api": 75.72
+    },
+    "Male": {
+      "count": 341,
+      "avg_stress": 5.45,
+      "avg_depression": 5.35,
+      "avg_anxiety": 5.4,
+      "avg_hrv": 69.94,
+      "avg_api": 74.33
+    },
+    "Other": {
+      "count": 328,
+      "avg_stress": 5.61,
+      "avg_depression": 5.67,
+      "avg_anxiety": 5.33,
+      "avg_hrv": 69.06,
+      "avg_api": 75.35
+    }
+  },
+  "study_vs_performance": [
+    {
+      "category": "Light (<3 hrs)",
+      "count": 265,
+      "avg_study_hours": 1.99,
+      "avg_academic_perf": 75.33,
+      "avg_stress": 5.71
+    },
+    {
+      "category": "Moderate (3-5.5 hrs)",
+      "count": 347,
+      "avg_study_hours": 4.23,
+      "avg_academic_perf": 75.02,
+      "avg_stress": 5.49
+    },
+    {
+      "category": "Intensive (>5.5 hrs)",
+      "count": 388,
+      "avg_study_hours": 6.73,
+      "avg_academic_perf": 75.08,
+      "avg_stress": 5.24
+    }
+  ],
+  "risk_breakdown": {
+    "Low": {
+      "count": 414,
+      "percentage": 41.4,
+      "avg_sleep": 6.48,
+      "avg_attendance": 80.2,
+      "avg_stress": 5.51,
+      "avg_api": 75.54,
+      "avg_hrv": 70.04
+    },
+    "Medium": {
+      "count": 347,
+      "percentage": 34.7,
+      "avg_sleep": 6.47,
+      "avg_attendance": 79.8,
+      "avg_stress": 5.41,
+      "avg_api": 75.51,
+      "avg_hrv": 69.72
+    },
+    "High": {
+      "count": 239,
+      "percentage": 23.9,
+      "avg_sleep": 6.51,
+      "avg_attendance": 79.77,
+      "avg_stress": 5.42,
+      "avg_api": 73.85,
+      "avg_hrv": 69.13
+    }
+  }
+}
