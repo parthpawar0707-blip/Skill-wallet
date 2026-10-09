@@ -743,6 +743,61 @@ header.site-header {
   margin-bottom: 0.45rem;
 }
 
+/* Project Story */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.story-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition);
+  position: relative;
+  border-left: 4px solid var(--accent-teal);
+}
+
+.story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+  border-left-color: var(--accent-teal-hover);
+}
+
+.story-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-teal);
+  background: var(--accent-teal-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.story-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.story-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+
 /* Documentation Cards */
 .doc-link {
   color: var(--accent-teal);

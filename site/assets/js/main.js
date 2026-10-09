@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.toggle('active');
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
     // Close mobile nav when clicking any link
@@ -13,8 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
           navLinks.classList.remove('active');
+          mobileToggle.setAttribute('aria-expanded', 'false');
         }
       });
+    });
+
+    // Close mobile nav with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.focus();
+      }
     });
   }
 
